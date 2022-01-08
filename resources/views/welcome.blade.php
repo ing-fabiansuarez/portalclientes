@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- https://aatrox-demo.vercel.app/html/index.html#demos -->
 <!-- https://aatrox-demo.vercel.app/ -->
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -13,14 +14,19 @@
     <link rel="mask-icon" href="assets/images/Aatrox-admin-logo.svg" color="#D290F4" />
     <meta name="msapplication-TileColor" content="#D290F4" />
     <meta name="theme-color" content="#ffffff" />
-    <title>P E R A - Aatrox Admin Dashboard</title>
+    <title>P E R A</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <link rel="stylesheet" href="assets/css/vendors.bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="assets/css/main.bundle.min.css" />
+    <!-- tailwind css -->
     <link rel="stylesheet" href="assets/css/tailwind.bundle.min.css" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    
+    <!-- estilos perzonalizados -->
+    <link rel="stylesheet" href="{{ asset('css/custom_styles.css') }}" />
 </head>
 
 <body>
@@ -256,21 +262,25 @@
             <div class="side-content-wrap">
                 <div class="sidebar-left open" data-perfect-scrollbar="" data-suppress-scroll-x="true">
                     <ul class="navigation-left">
-                        <li class="nav-item active" data-item="dashboard"><a class="nav-item-hold" href="#"><i class="i-Bar-Chart text-3xl"></i>
+                        <li class="nav-item active"><a class="nav-item-hold" href="#"><i class="i-Pie-Chart-2 text-xl"></i>
                                 <p>Inicio</p>
                             </a></li>
+                        <li class="nav-item" data-item="dashboard"><a class="nav-item-hold" href="#"><i class="i-Bar-Chart text-3xl"></i>
+                                <p>Estadisticas</p>
+                            </a></li>
                         <li class="nav-item" data-item="apps"><a class="nav-item-hold" href="#"><i class="i-Computer-Secure text-3xl"></i>
-                                <p>Apps</p>
+                                <p>Mis Pedidos</p>
+                            </a></li>
+                        <li class="nav-item" data-item="profile"><a class="nav-item-hold" href="#"><i class="i-Find-User text-3xl"></i>
+                                <p>Mi Perfil</p>
                             </a></li>
                         <li class="nav-item" data-item="components"><a class="nav-item-hold" href="#"><i class="i-Wallet text-3xl"></i>
-                                <p>Components</p>
+                                <p>Mi Perfil</p>
                             </a></li>
                         <li class="nav-item" data-item="widgets"><a class="nav-item-hold" href="#"><i class="i-Atom text-3xl"></i>
                                 <p>Widgets</p>
                             </a></li>
-                        <li class="nav-item" data-item="profile"><a class="nav-item-hold" href="#"><i class="i-Find-User text-3xl"></i>
-                                <p>Profile</p>
-                            </a></li>
+
                         <li class="nav-item" data-item="sessions"><a class="nav-item-hold" href="#"><i class="i-Administrator text-3xl"></i>
                                 <p>Session</p>
                             </a></li>
