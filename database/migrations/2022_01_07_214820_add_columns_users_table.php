@@ -15,15 +15,15 @@ class AddColumnsUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('surname')
-            ->after('name');
-
+                ->after('name');
             $table->unsignedBigInteger('type_identify_id')
-            ->after('surname');
+                ->after('surname');
             $table->foreign('type_identify_id')->references('id')->on('type_identify');
-
-            $table->unsignedBigInteger('phone_id')
-            ->after('type_identify_id');
-            $table->foreign('phone_id')->references('id')->on('phones');
+            $table->string('identify_number')
+                ->after('type_identify_id');
+            $table->unsignedBigInteger('rol_id')
+                ->after('identify_number');
+            $table->foreign('rol_id')->references('id')->on('roles');
         });
     }
 
