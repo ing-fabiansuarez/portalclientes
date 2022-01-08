@@ -18,15 +18,15 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
-    <link rel="stylesheet" href="assets/css/vendors.bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/main.bundle.min.css" />
+    <!-- <link rel="stylesheet" href="assets/css/vendors.bundle.min.css" /> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="assets/css/main.css" />
     <!-- tailwind css -->
-    <link rel="stylesheet" href="assets/css/tailwind.bundle.min.css" />
+    <!-- <link rel="stylesheet" href="assets/css/tailwind.bundle.min.css" /> -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     
     <!-- estilos perzonalizados -->
-    <link rel="stylesheet" href="{{ asset('css/custom_styles.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ asset('css/custom_styles.css') }}" /> -->
 </head>
 
 <body>
