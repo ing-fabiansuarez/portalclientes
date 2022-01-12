@@ -35,19 +35,6 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
-        //estos campos que estan comentados deberian crear los permisos del usuario apenas se crea
-        //sin embargo, al intentar buscar el usuario parece estar bloqueada la ruta y no trae la informacion
-        /*$permissions=Permissions::all();
-        var_dump($permissions);
-        $user=User::where('identify_number','like',$input['identify_number'])->get();
-        $user=User::all();
-        dd($user);
-        foreach($permissions as $permission){
-            UserPermissions::create([
-                'user_id'=>$user->id,
-                'permission_id'=>$permission->id
-            ]);
-        } */
         return User::create([
             'name' => $input['name'],
             'surname' => $input['sur_name'],

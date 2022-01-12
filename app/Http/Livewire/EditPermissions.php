@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Permissions;
 use App\Models\User;
 use App\Models\UserPermissions;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class EditPermissions extends Component
@@ -21,13 +22,14 @@ class EditPermissions extends Component
     {
         $user_permissions = UserPermissions::where('user_id', '=', $this->user->id)->get();
         $permissions = Permissions::all();
+        echo $user_permissions->count();
         if ($user_permissions->count() == 0) {
             foreach ($permissions as $permission) {
                 UserPermissions::create([
                     'user_id' => $this->user->id,
                     'permission_id' => $permission->id,
                     'state' => 0,
-                    'by' => $_SESSION['id']
+                    'by' => Auth::user()->identify_number
                 ]);
             }
             $user_permissions = UserPermissions::where('user_id', '=', $this->user->id)->get();

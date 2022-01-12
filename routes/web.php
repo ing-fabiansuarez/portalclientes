@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,14 +14,22 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-    return view('welcome');
+
+Route::get('/', function () {
+    return view('auth.login');
 });
-/* Route::get('/', UserController::class);
-Route::get('/create', [UserController::class,'index']); */
-Route::get('/users',function(){
-    return view('user.user_list');
-});
+
+Route::get('users', [UserController::class, 'index'])->name('users.index')
+    ->middleware(['auth:sanctum', 'verified']);
+Route::get('users/create', [UserController::class, 'create'])->name('users.create')
+    ->middleware(['auth:sanctum', 'verified']);
+Route::post('users/store', [UserController::class, 'store'])->name('users.store')
+    ->middleware(['auth:sanctum', 'verified']);
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit')
+    ->middleware(['auth:sanctum', 'verified']);
+Route::put('users/{user}', [UserController::class, 'update'])->name('users.update')
+    ->middleware(['auth:sanctum', 'verified']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

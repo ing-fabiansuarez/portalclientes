@@ -12,6 +12,7 @@ class UserPermissions extends Model
     protected $fillable = [
         'user_id',
         'permission_id',
-        'by'
+        'by',
+        'state'
     ];
 }
