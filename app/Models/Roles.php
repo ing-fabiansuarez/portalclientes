@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Permissions extends Model
+class Roles extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name',
-        'created_at',
-        'updated_at'
-    ];
+    //Relacion de uno a muchos
+    public function prices(){
+        return $this->hasMany('App\Models\Prices');
+    }
 }

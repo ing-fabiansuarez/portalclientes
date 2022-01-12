@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Permissions extends Model
+class Prices extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name',
-        'created_at',
-        'updated_at'
-    ];
+    public function categories(){
+        return $this->belongsTo('App\Models\Categories');
+    }
 }
