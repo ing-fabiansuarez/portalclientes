@@ -14,9 +14,10 @@ class CreateReferencesTable extends Migration
     public function up()
     {
         Schema::create('references', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->string('name');
-            $table->foreign('products_id')->references('id')->on('products');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

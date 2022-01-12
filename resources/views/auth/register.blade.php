@@ -5,7 +5,7 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-
+        {{-- se modifico el registro segun los campos necesarios --}}
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div>

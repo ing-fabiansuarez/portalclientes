@@ -8,7 +8,8 @@
             <div>
                 <x-jet-label value="Permisos" />
             </div>
-            <div>
+            <div class="w-full">
+                
                 <table class="table-auto">
                     <thead>
                         <tr>
@@ -18,13 +19,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($permissions as $permission)
+                        
+                        @foreach ($permissions as $permission)
                             <tr>
-                                <td>Checkbox</td>
+                                <td>
+                                    
+                                    <input type="checkbox" />
+                                </td>
+                                {{-- <td>{{$permission->user_id}}</td> --}}
+                                {{-- <td>{{$permission->id}}</td> --}}
                                 <td>{{$permission->name}}</td>
                                 <td>{{$permission->description}}</td>
                             </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
 

@@ -1,4 +1,5 @@
 <x-guest-layout>
+    {{-- Se le añade el boton de registro por el momento mientras se esta en desarrollo --}}
     <div
         class="relative flex items-top justify-center min-h-screen dark:bg-white-900 sm:items-center py-4 sm:pt-0">
         @if (Route::has('login'))

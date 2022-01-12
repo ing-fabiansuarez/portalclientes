@@ -10,6 +10,7 @@ class ShowUsers extends Component
     public $search;
     public $sort='id';
     public $direction='desc';
+    //Muestra los usuarios y da las funcionalidades de un DataTable
     public function render()
     {
         $users=User::where('surname','like','%'.$this->search.'%')
