@@ -30,10 +30,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     })->name('dashboard');
 
 
-    //RUTAS PARA LA SECCION DE PEDIDOS
+    //PEDIDOS
     Route::group(['prefix' => 'pedidos'], function () {
         Route::get('crear', function () {
-           return view('orders.create-order');
+            return view('orders.create-order');
         })->name('create_order');
+    });
+
+    //USUARIOS
+    Route::group(['prefix' => 'usuarios'], function () {
+        Route::get('registrar', function () {
+            return view('users.register');
+        })->name('register_user');
     });
 });

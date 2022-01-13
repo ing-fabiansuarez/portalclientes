@@ -50,7 +50,7 @@
             <li><a class="flex" href="#"><i class="nav-icon i-Add-Cart text-base mr-2"></i><span class="item-name">Mis Pedidos</span></a></li>
         </ul>
         <ul class="mb-4 childNav" data-parent="profile" style="display:none">
-            <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Registrar usuarios</span></a></li>
+            <li><a href="{{route('register_user')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Registrar usuarios</span></a></li>
             <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Permisos por usuario</span></a></li>
             <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Listado de Permisos</span></a></li>
         </ul>
