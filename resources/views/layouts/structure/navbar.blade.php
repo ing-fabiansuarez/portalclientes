@@ -157,8 +157,8 @@
         </div>
     </div>
     <div class="flex items-center">
-        <button class="hidden mr-0 btn btn-sm hover:bg-gray-100 sm:block rounded p-1 md:mr-2" data-toggle="dropdown"><i class="i-Full-Screen text-gray-800 text-xl"></i></button>
-        <div class="mr-0 ul-dropdown md:mr-2" id="dropdownWrapper">
+        
+        <!-- <div class="mr-0 ul-dropdown md:mr-2" id="dropdownWrapper">
             <button class="btn btn-sm hover:bg-gray-100 rounded p-1 mr-2" data-toggle="dropdown"><i class="i-Safe-Box text-gray-800 text-xl"></i></button>
             <div class="dropdown-menu">
                 <div class="menu-icon-grid flex justify-between flex-wrap"><a class="hover:bg-primary-500 p-4 inline-flex flex-col items-center rounded w-20" href="#"><i class="i-Shop-4 text-2xl"> </i>Home</a><a class="hover:bg-primary-500 p-4 inline-flex flex-col items-center rounded w-20" href="#"><i class="i-Library text-2xl"></i>UI Kits</a><a class="hover:bg-primary-500 p-4 inline-flex flex-col items-center rounded w-20" href="#"><i class="i-Drop text-2xl"></i>Apps</a><a class="hover:bg-primary-500 p-4 inline-flex flex-col items-center rounded w-20" href="#"><i class="i-File-Clipboard-File--Text text-2xl"> </i>Forms</a><a class="hover:bg-primary-500 p-4 inline-flex flex-col items-center rounded w-20" href="#"><i class="i-Checked-User text-2xl"></i>Sessions</a><a class="hover:bg-primary-500 p-4 inline-flex flex-col items-center rounded w-20" href="#"><i class="i-Ambulance text-2xl"></i>Support</a></div>
@@ -211,7 +211,7 @@
                         <p class="text-xs text-gray-500">10s</p>
                     </a></div>
             </div>
-        </div>
+        </div> -->
         <div class="mr-0 ul-dropdown md:mr-2" id="dropdownWrapper">
             <button class="btn btn-sm" data-toggle="dropdown"><img class="avatar rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /></button>
             <div class="dropdown-menu">

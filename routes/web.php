@@ -20,7 +20,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', function () {
         return view('home');
     })->name('home_system');
-    
+
     /* Route::get('/', function () {
         return view('welcome');
     }); */
@@ -29,5 +29,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    
+
+    //RUTAS PARA LA SECCION DE PEDIDOS
+    Route::group(['prefix' => 'pedidos'], function () {
+        Route::get('crear', function () {
+           return view('orders.create-order');
+        })->name('create_order');
+    });
 });

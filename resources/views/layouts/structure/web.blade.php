@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <!-- <link rel="stylesheet" href="assets/css/vendors.bundle.min.css" /> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css" /> -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
     <!-- tailwind css -->
     <!-- <link rel="stylesheet" href="assets/css/tailwind.bundle.min.css" /> -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
@@ -53,13 +53,13 @@
         </div>
     </div>
     <div class="ul-sidebar-panel-overlay"></div>
-    <script src="assets/js/vendors.bundle.min.js"></script>
-    <script src="assets/js/main.bundle.min.js"></script>
-    <script src="assets/js/pages/dropdown.min.js"></script>
-    <script src="assets/js/pages/modal.min.js"></script>
-    <script src="assets/js/pages/dashboard/dataSeries.script.js"></script>
+    <script src="{{asset('assets/js/vendors.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/pages/dropdown.min.js')}}"></script>
+    <script src="{{asset('assets/js/pages/modal.min.js')}}"></script>
+    <script src="{{asset('assets/js/pages/dashboard/dataSeries.script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
-    <script src="assets/js/pages/dashboard/dashboard.v1.script.js"></script>
+    <script src="{{asset('assets/js/pages/dashboard/dashboard.v1.script.js')}}"></script>
     @livewireScripts
 </body>
 
