@@ -16,12 +16,18 @@ class RolesSeeder extends Seeder
     {
         DB::table('roles')->insert([
             'name' => 'ADMINISTRADOR',
+            'created_at'=>'2022-01-13 11:22:58',
+            'updated_at'=>'2022-01-13 11:22:58'
         ]);
         DB::table('roles')->insert([
             'name' => 'DISTRIBUIDOR AUTORIZADO',
+            'created_at'=>'2022-01-13 11:22:58',
+            'updated_at'=>'2022-01-13 11:22:58'
         ]);
         DB::table('roles')->insert([
             'name' => 'MAYORISTA',
+            'created_at'=>'2022-01-13 11:22:58',
+            'updated_at'=>'2022-01-13 11:22:58'
         ]);
     }
 }

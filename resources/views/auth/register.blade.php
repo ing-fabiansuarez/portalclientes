@@ -31,7 +31,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="surname" value="{{ __('Rol') }}" />
-                <x-jet-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+                <x-select-input-roles class="mt-2"/>
             </div>
 
             <div class="mt-4">
