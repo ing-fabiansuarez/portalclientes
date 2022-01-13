@@ -17,6 +17,7 @@ class CreatedTypeIdentifyTable extends Migration
             $table->id()->autoIncrement();
             $table->string('name');
             $table->string('abb');
+            $table->boolean('active');
         });
     }
 

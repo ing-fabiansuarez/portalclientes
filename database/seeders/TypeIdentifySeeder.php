@@ -17,14 +17,17 @@ class TypeIdentifySeeder extends Seeder
         DB::table('type_identify')->insert([
             'name' => 'CEDULA DE CIUDADANIA',
             'abb' => 'CC',
+            'active' => true,
         ]);
         DB::table('type_identify')->insert([
             'name' => 'NUMERO DE IDENTIFICACION TRIBUTARIA',
             'abb' => 'NIT',
+            'active' => true,
         ]);
         DB::table('type_identify')->insert([
             'name' => 'CEDULA DE EXTRANJERIA',
             'abb' => 'CE',
+            'active' => false,
         ]);
     }
 }

@@ -21,7 +21,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="surname" value="{{ __('Tipo de Identificación') }}" />
-                <x-jet-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+                <x-select-input-type-identifications class="mt-2"/>
             </div>
 
             <div class="mt-4">
