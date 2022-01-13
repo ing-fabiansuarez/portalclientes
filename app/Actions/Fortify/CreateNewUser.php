@@ -25,12 +25,20 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
+            'surname' => ['required', 'string', 'max:255'],
+            'id_type_identification' => ['required', 'exists:type_identify,id'],
+            'number_identification' => ['required', 'integer'],
+            'id_type_rol' => ['required', 'exists:roles,id'],
         ])->validate();
 
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'surname' => $input['surname'],
+            'type_identify_id' => $input['id_type_identification'],
+            'identify_number' => $input['number_identification'],
+            'rol_id' => $input['id_type_rol']
         ]);
     }
 }

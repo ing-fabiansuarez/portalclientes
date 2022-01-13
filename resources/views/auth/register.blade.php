@@ -20,18 +20,18 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="surname" value="{{ __('Tipo de Identificación') }}" />
-                <x-select-input-type-identifications class="mt-2" required/> 
+                <x-jet-label value="{{ __('Tipo de Identificación') }}" />
+                <x-select-input-type-identifications name="id_type_identification" class="mt-2" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="surname" value="{{ __('Número de Identifiación') }}" />
-                <x-jet-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
+                <x-jet-label value="{{ __('Número de Identifiación') }}" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="number_identification" :value="old('number_identification')" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="surname" value="{{ __('Rol') }}" />
-                <x-select-input-roles class="mt-2" required/>
+                <x-jet-label value="{{ __('Rol') }}" />
+                <x-select-input-roles name="id_type_rol" class="mt-2" required />
             </div>
 
             <div class="mt-4">
