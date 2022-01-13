@@ -21,7 +21,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="surname" value="{{ __('Tipo de Identificación') }}" />
-                <x-select-input-type-identifications class="mt-2"/>
+                <x-select-input-type-identifications class="mt-2" required/> 
             </div>
 
             <div class="mt-4">
@@ -31,7 +31,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="surname" value="{{ __('Rol') }}" />
-                <x-select-input-roles class="mt-2"/>
+                <x-select-input-roles class="mt-2" required/>
             </div>
 
             <div class="mt-4">
