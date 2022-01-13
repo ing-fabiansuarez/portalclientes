@@ -14,6 +14,9 @@ class CreateUserHasPermissionsTable extends Migration
     public function up()
     {
         Schema::create('user_has_permissions', function (Blueprint $table) {
+            //Se agrega el campo id para modificar la tabla
+            //Nombre del error: La selección actual no contiene una columna única. La edición de la grilla y los enlaces de copiado, eliminación y edición no están disponibles.
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('permission_id');

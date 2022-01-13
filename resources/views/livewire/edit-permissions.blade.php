@@ -1,16 +1,16 @@
 <div>
-    <a href="#" class="text-indigo-600 hover:text-indigo-900" wire:click="$set('open',true)">Edit</a>
+    <a class="text-indigo-600 hover:text-indigo-900" wire:click="$set('open',true)">Cambiar permisos</a>
+
     <x-jet-dialog-modal wire:model="open">
         <x-slot name="title" class="text-center">
-            Permisos usuario: {{ $user->name }} {{ $user->surname }} CC: {{ $user->identify_number }}
+            Permisos usuario
         </x-slot>
         <x-slot name="content">
             <div>
-                <x-jet-label value="Permisos" />
+                <x-jet-label value="Listado de permisos" />
             </div>
-            <div class="w-full">
-                
-                <table class="table-auto">
+            <div style="text-align:center;">
+                <table class="table" style="margin: 0 auto;">
                     <thead>
                         <tr>
                             <th>Estado</th>
@@ -19,26 +19,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        @foreach ($permissions as $permission)
+                        @foreach ($userPermissions as $permission)
                             <tr>
                                 <td>
                                     
-                                    <input type="checkbox" />
                                 </td>
-                                {{-- <td>{{$permission->user_id}}</td> --}}
-                                {{-- <td>{{$permission->id}}</td> --}}
-                                <td>{{$permission->name}}</td>
-                                <td>{{$permission->description}}</td>
+                                <td>{{ $permission->name }}</td>
+                                <td>{{ $permission->description }}</td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
-
             </div>
         </x-slot>
         <x-slot name="footer">
-
+            <x-jet-secondary-button wire:click="$set('open',false)">
+                Cancelar
+            </x-jet-secondary-button>
+            <x-jet-secondary-button wire:click="save">
+                Actualizar
+            </x-jet-secondary-button>
         </x-slot>
     </x-jet-dialog-modal>
 </div>

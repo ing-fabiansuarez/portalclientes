@@ -57,7 +57,7 @@
                         Telefono
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        edit
+                        <a href="{{route('users.edit',$user)}}">Editar</a>
                     </td>
                 </tr>
             @endforeach

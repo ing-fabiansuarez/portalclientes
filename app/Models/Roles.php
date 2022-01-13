@@ -8,8 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Roles extends Model
 {
     use HasFactory;
-    //Relacion de uno a muchos
-    public function prices(){
-        return $this->hasMany('App\Models\Prices');
-    }
+    
 }
