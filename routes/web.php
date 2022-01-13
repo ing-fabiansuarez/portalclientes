@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,5 +43,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('registrar', function () {
             return view('users.register');
         })->name('register_user');
+        Route::get('listado', [UserController::class, "index"])->name('list_users');
+        Route::get('create', [UserController::class, 'create'])->name('create_user');
+        Route::get('{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('{userJ}', [UserController::class, 'update'])->name('users.update');
     });
 });
