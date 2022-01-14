@@ -54,6 +54,9 @@
             <li><a href="{{route('list_users')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Permisos por usuario</span></a></li>
             <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Listado de Permisos</span></a></li>
         </ul>
+        <ul class="mb-4 childNav" data-parent="profile" style="display:none">
+            <li><a href="{{route('permissions.index')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Listado de permisos</span></a></li>
+        </ul>
         <!-- <ul class="mb-4 childNav" data-parent="widgets" style="display:none">
             <li><a href="widgets/widgets.charts.html"><i class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">Charts</span></a></li>
             <li><a href="widgets/widgets.general.html"><i class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">General</span></a></li>

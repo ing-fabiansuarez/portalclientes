@@ -43,7 +43,7 @@
                 <x-jet-label for="rol_id" value="Rol" />
                 <x-select-input-roles />
             </div>
-
+            
             <div class="flex items-center justify-end mt-4">
                 <x-jet-button class="ml-4">
                     Registrar

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,5 +48,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('create', [UserController::class, 'create'])->name('create_user');
         Route::get('{user}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::put('{userJ}', [UserController::class, 'update'])->name('users.update');
+    });
+    //Permisos
+    Route::group(['prefix' => 'permisos'], function () {
+        Route::get('index', [PermissionController::class, 'index'])->name('permissions.index');
+        Route::get('create', [PermissionController::class, 'create'])->name('permissions.create');
     });
 });
