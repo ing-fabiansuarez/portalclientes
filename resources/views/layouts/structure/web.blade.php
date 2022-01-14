@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <!-- <link rel="stylesheet" href="assets/css/vendors.bundle.min.css" /> -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css" /> -->
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <!-- tailwind css -->
     <!-- <link rel="stylesheet" href="assets/css/tailwind.bundle.min.css" /> -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
@@ -30,15 +30,16 @@
     <!-- stilos livewire -->
     @livewireStyles
 
-{{-- Estilos de app-layout --}}
+    {{-- Estilos de app-layout --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- Scripts -->
     {{-- Aqui era el error del modal --}}
     <script src="{{ mix('js/app.js') }}" defer></script>
-    
+
     @yield('styles')
 </head>
 
@@ -64,17 +65,18 @@
         </div>
     </div>
     <div class="ul-sidebar-panel-overlay"></div>
-    <script src="{{asset('assets/js/vendors.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/js/main.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/js/pages/dropdown.min.js')}}"></script>
-    <script src="{{asset('assets/js/pages/modal.min.js')}}"></script>
-    <script src="{{asset('assets/js/pages/dashboard/dataSeries.script.js')}}"></script>
+    <script src="{{ asset('assets/js/vendors.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/dropdown.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/modal.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/dashboard/dataSeries.script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
-    <script src="{{asset('assets/js/pages/dashboard/dashboard.v1.script.js')}}"></script>
+    <script src="{{ asset('assets/js/pages/dashboard/dashboard.v1.script.js') }}"></script>
     @stack('modals')
 
     @livewireScripts
     @yield('scripts')
+    
 </body>
 
 </html>

@@ -2,7 +2,7 @@
     @livewire('create-permission')
     @if ($permissions->count())
         <x-table>
-            <table class="min-w-full divide-y divide-gray-200">
+            <table class="min-w-full divide-y divide-gray-200" id="Permisos">
                 <thead class="bg-gray-50">
                     <tr>
                         <th scope="col"
@@ -36,7 +36,7 @@
                                 {{ $permission->description }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="#">Editar</a>
+                                @livewire('edit-permissions',['permission'=>$permission],key($permission->id))
                             </td>
                         </tr>
                     @endforeach

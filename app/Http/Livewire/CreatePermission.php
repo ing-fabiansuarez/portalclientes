@@ -11,7 +11,6 @@ class CreatePermission extends Component
     public $name,$description;
     public function render()
     {
-
         return view('livewire.create-permission');
     }
     public function save(){

@@ -7,25 +7,25 @@ use Livewire\Component;
 
 class EditPermissions extends Component
 {
-    public $user;
-    public $open=false;
-    public function mount($user_id)
+    public $perm;
+    public $open = false;
+    protected $rules = [
+        'perm.name' => 'required',
+        'perm.description' => 'required'
+    ];
+    public function mount(Permissions $permission)
     {
-        $this->user=$user_id;
+        $this->perm = $permission;
     }
-    //render le as igna los permisos si el usuario no posee ningun permiso, sin embargo estos 
-    //estarian inactivos
     public function render()
     {
-        /* $userPermissions=DB::table('user_has_permissions')
-        ->join('permissions', 'user_has_permissions.permission_id', '=', 'permissions.id')
-        ->where('user_has_permissions.user_id','=',$this->user)
-        ->get(); */
-        $permissions=Permissions::all();
-        
-        return view('livewire.edit-permissions');
+        return view('livewire.edit-permission');
     }
-    public function save(){
-        
+    public function save()
+    {
+        $this->validate();
+        $this->perm->save();
+        $this->reset(['open']);
+        $this->emitTo('show-permissions','render');
     }
 }
