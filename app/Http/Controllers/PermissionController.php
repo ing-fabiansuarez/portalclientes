@@ -18,10 +18,10 @@ class PermissionController extends Controller
     }
     public function store(Request $request)
     {
-        Permissions::create([
+        /* Permissions::create([
             'name' => $request->name,
             'description'=>$request->description
-        ]);
+        ]); */
         /* $permissions = Permissions::all();
         $user = User::select('id')->where('identify_number', '=', $request->identify_number)->get();
         foreach ($permissions as $permission) {

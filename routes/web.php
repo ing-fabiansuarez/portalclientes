@@ -52,6 +52,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     //Permisos
     Route::group(['prefix' => 'permisos'], function () {
         Route::get('index', [PermissionController::class, 'index'])->name('permissions.index');
-        Route::get('create', [PermissionController::class, 'create'])->name('permissions.create');
     });
 });
