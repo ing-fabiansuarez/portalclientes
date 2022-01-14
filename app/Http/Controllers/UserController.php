@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        return view('user.users.edit', compact('user'));
+        return view('users.edit_user', compact('user'));
     }
     public function update($user)
     {
