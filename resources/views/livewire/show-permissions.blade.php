@@ -35,8 +35,11 @@
                             <td class="px-6 py-4">
                                 {{ $permission->description }}
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 flex">
                                 @livewire('edit-permissions',['permission'=>$permission],key($permission->id))
+                                <a class="ml-4" wire:click="$emit('deletePermission',{{ $permission->id }})">
+                                    <i class="fas fa-trash">Eliminar</i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -48,4 +51,29 @@
             </div>
     @endif
     </x-table>
+    @push('js')
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Livewire.on('deletePermission', permId => {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.emitTo('show-permissions','delete',permId)
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+            });
+        </script>
+    @endpush
 </div>

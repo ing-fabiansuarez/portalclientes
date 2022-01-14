@@ -41,6 +41,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 
     @yield('styles')
+    @stack('css')
 </head>
 
 <body>
@@ -76,6 +77,7 @@
 
     @livewireScripts
     @yield('scripts')
+    @stack('js')
     
 </body>
 
