@@ -6,7 +6,7 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-        <form method="POST" action="#">
+        <form method="POST" action="{{route('users.store')}}">
             @csrf
             <div>
                 <x-jet-label for="name" value="Nombre" />
