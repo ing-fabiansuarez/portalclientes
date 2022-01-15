@@ -11,6 +11,10 @@
                     <p>Usuarios</p>
                 </a>
             </li>
+            <li class="nav-item" data-item="permissions"><a class="nav-item-hold" href="#"><i class="i-Find-User text-3xl"></i>
+                <p>Permisos</p>
+            </a>
+        </li>
             <!-- <li class="nav-item" data-item="dashboard"><a class="nav-item-hold" href="#"><i class="i-Bar-Chart text-3xl"></i>
                     <p>Estadisticas</p>
                 </a>
@@ -51,10 +55,9 @@
         </ul>
         <ul class="mb-4 childNav" data-parent="profile" style="display:none">
             <li><a href="{{route('register_user')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Registrar usuarios</span></a></li>
-            <li><a href="{{route('list_users')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Permisos por usuario</span></a></li>
-            <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Listado de Permisos</span></a></li>
+            <li><a href="{{route('list_users')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Asignacion de permisos usuarios</span></a></li>
         </ul>
-        <ul class="mb-4 childNav" data-parent="profile" style="display:none">
+        <ul class="mb-4 childNav" data-parent="permissions" style="display:none">
             <li><a href="{{route('permissions.index')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Listado de permisos</span></a></li>
         </ul>
         <!-- <ul class="mb-4 childNav" data-parent="widgets" style="display:none">

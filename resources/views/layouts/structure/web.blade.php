@@ -56,7 +56,7 @@
             @include('layouts.structure.sidebar')
 
             <!-- Start:: content body-->
-            <div class="main-content-body pt-10 px-4 flex flex-col sm:px-8">
+            <div class="main-content-body pt-10 px-6 flex flex-col sm:px-8">
 
                 @yield('content')
 

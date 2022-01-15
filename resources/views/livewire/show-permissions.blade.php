@@ -1,7 +1,7 @@
 <div>
     @livewire('create-permission')
+    <x-table>
     @if ($permissions->count())
-        <x-table>
             <table class="min-w-full divide-y divide-gray-200" id="Permisos">
                 <thead class="bg-gray-50">
                     <tr>
