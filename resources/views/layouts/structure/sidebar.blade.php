@@ -1,20 +1,24 @@
 <div class="side-content-wrap">
     <div class="sidebar-left open" data-perfect-scrollbar="" data-suppress-scroll-x="true">
         <ul class="navigation-left">
-            <li class="nav-item active"><a class="nav-item-hold" href="{{route('home_system')}}"><i class="i-Shop-4 text-3xl"></i>
+            <li class="nav-item active"><a class="nav-item-hold" href="{{ route('home_system') }}"><i
+                        class="i-Shop-4 text-3xl"></i>
                     <p>Inicio</p>
                 </a></li>
-            <li class="nav-item" data-item="apps"><a class="nav-item-hold" href="#"><i class="i-Computer-Secure text-3xl"></i>
+            <li class="nav-item" data-item="apps"><a class="nav-item-hold" href="#"><i
+                        class="i-Computer-Secure text-3xl"></i>
                     <p>Mis Pedidos</p>
                 </a></li>
-            <li class="nav-item" data-item="profile"><a class="nav-item-hold" href="#"><i class="i-Find-User text-3xl"></i>
+            <li class="nav-item" data-item="profile"><a class="nav-item-hold" href="#"><i
+                        class="i-Find-User text-3xl"></i>
                     <p>Usuarios</p>
                 </a>
             </li>
-            <li class="nav-item" data-item="permissions"><a class="nav-item-hold" href="#"><i class="i-Find-User text-3xl"></i>
-                <p>Permisos</p>
-            </a>
-        </li>
+            <li class="nav-item" data-item="permissions"><a class="nav-item-hold"
+                    href="{{ route('permissions.index') }}"><i class="i-Find-User text-3xl"></i>
+                    <p>Permisos</p>
+                </a>
+            </li>
             <!-- <li class="nav-item" data-item="dashboard"><a class="nav-item-hold" href="#"><i class="i-Bar-Chart text-3xl"></i>
                     <p>Estadisticas</p>
                 </a>
@@ -43,22 +47,31 @@
     </div>
     <div class="sidebar-left-secondary shadow" data-perfect-scrollbar="" data-suppress-scroll-x="true">
         <ul class="mb-4 childNav" data-parent="dashboard" style="display:block">
-            <li class="active"><a href="dashboards/dashboard.dashboard.v1.html"><i class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">Version One</span></a></li>
-            <li><a href="dashboards/dashboard.dashboard.v2.html"><i class="nav-icon i-Clock-4 text-base mr-2"></i><span class="item-name">Version Two</span></a></li>
-            <li><a href="dashboards/dashboard.dashboard.v3.html"><i class="nav-icon i-Over-Time text-base mr-2"></i><span class="item-name">Version Three</span></a></li>
-            <li><a href="dashboards/dashboard.dashboard.v4.html"><i class="nav-icon i-Clock text-base mr-2"></i><span class="item-name">Version Four </span></a></li>
-            <li><a href="dashboards/dashboard.Analytic-2.html"><i class="nav-icon i-Clock text-base mr-2"></i><span class="item-name">Version Five </span></a></li>
+            <li class="active"><a href="dashboards/dashboard.dashboard.v1.html"><i
+                        class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">Version
+                        One</span></a></li>
+            <li><a href="dashboards/dashboard.dashboard.v2.html"><i class="nav-icon i-Clock-4 text-base mr-2"></i><span
+                        class="item-name">Version Two</span></a></li>
+            <li><a href="dashboards/dashboard.dashboard.v3.html"><i
+                        class="nav-icon i-Over-Time text-base mr-2"></i><span class="item-name">Version
+                        Three</span></a></li>
+            <li><a href="dashboards/dashboard.dashboard.v4.html"><i class="nav-icon i-Clock text-base mr-2"></i><span
+                        class="item-name">Version Four </span></a></li>
+            <li><a href="dashboards/dashboard.Analytic-2.html"><i class="nav-icon i-Clock text-base mr-2"></i><span
+                        class="item-name">Version Five </span></a></li>
         </ul>
         <ul class="mb-4 childNav" data-parent="apps" style="display:none">
-            <li><a class="flex" href="{{route('create_order')}}"><i class="nav-icon i-Add-Cart text-base mr-2"></i><span class="item-name">Crear Pedido</span></a></li>
-            <li><a class="flex" href="#"><i class="nav-icon i-Add-Cart text-base mr-2"></i><span class="item-name">Mis Pedidos</span></a></li>
+            <li><a class="flex" href="{{ route('create_order') }}"><i
+                        class="nav-icon i-Add-Cart text-base mr-2"></i><span class="item-name">Crear
+                        Pedido</span></a></li>
+            <li><a class="flex" href="#"><i class="nav-icon i-Add-Cart text-base mr-2"></i><span
+                        class="item-name">Mis Pedidos</span></a></li>
         </ul>
         <ul class="mb-4 childNav" data-parent="profile" style="display:none">
-            <li><a href="{{route('register_user')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Registrar usuarios</span></a></li>
-            <li><a href="{{route('list_users')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Asignacion de permisos usuarios</span></a></li>
-        </ul>
-        <ul class="mb-4 childNav" data-parent="permissions" style="display:none">
-            <li><a href="{{route('permissions.index')}}"><i class="nav-icon i-Find-User text-base mr-2"></i><span class="item-name">Listado de permisos</span></a></li>
+            <li><a href="{{ route('create_user') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
+                        class="item-name">Registrar nuevo usuario</span></a></li>
+            <li><a href="{{ route('list_users') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
+                        class="item-name">Asignar permisos de usuarios</span></a></li>
         </ul>
         <!-- <ul class="mb-4 childNav" data-parent="widgets" style="display:none">
             <li><a href="widgets/widgets.charts.html"><i class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">Charts</span></a></li>

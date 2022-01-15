@@ -1,5 +1,5 @@
 <div>
-    <x-jet-secondary-button wire:click="$set('open',true)">
+    <x-jet-secondary-button wire:click="$set('open',true)" class="bg-purple-400">
         Crear permiso
     </x-jet-secondary-button>
 

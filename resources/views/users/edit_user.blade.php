@@ -3,6 +3,7 @@
     Listado de Usuarios -
 @endsection
 @push('css')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 @endpush
 
@@ -32,7 +33,7 @@
                             </div>
                             <div class="mt-4 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                                 <x-jet-label for="id_type_identification" value="Tipo de identificacion" />
-                                <x-select-input-type-identifications />
+                                <x-select-input-type-identifications name="id_type_identification" value="{{$user->type_identify_id}}" readonly/>
                             </div>
                             <div class="mt-4 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                                 <x-jet-label for="identify_number" value="Numero de identificacion" />
@@ -46,7 +47,7 @@
                             </div>
                             <div class="mt-4 flex flex-col xl:w-2/6 lg:w-1/2 md:w-1/2 w-full">
                                 <x-jet-label for="rol_id" value="Rol" />
-                                <x-select-input-roles />
+                                <x-select-input-roles name="id_type_rol" required />
                             </div>
                         </div>
                 </div>
@@ -68,11 +69,12 @@
                                         {{ $permission->description }}</p>
                                 </div>
                                 <div class="cursor-pointer rounded-full bg-gray-200 relative shadow-sm">
-                                    @php
+                                    <?php
                                         $searchPermission = App\Models\UserPermissions::where('user_id', '=', $user->id)
                                             ->where('permission_id', '=', $permission->id)
                                             ->get();
-                                    @endphp
+                                        if($searchPermission->count()){
+                                    ?>
                                     <label class="switch">
                                         <input id="permission" data-permission="{{ $permission->id }}"
                                             class="mi_checkbox" type="checkbox" data-onstyle="success"
@@ -81,15 +83,16 @@
                                             {{ $searchPermission[0]->state ? 'checked' : '' }}>
                                         <span class="slider round"></span>
                                     </label>
-
-                                    {{-- <input tabindex="0" aria-labelledby="cb1" type="checkbox" name="state_permission"
-                                        id="state_permission"
-                                        class="focus:outline-none checkbox w-6 h-6 rounded-full bg-white dark:bg-gray-400 absolute shadow-sm appearance-none cursor-pointer border border-transparent top-0 bottom-0 m-auto"
-                                        {{ $searchPermission[0]->state ? 'checked' : '' }}
-                                        data-iduser="{{ $searchPermission[0]->user_id }}"
-                                        data-idpermission="{{ $permission->id }}" />
-                                    <label
-                                        class="toggle-label block w-12 h-4 overflow-hidden rounded-full bg-gray-300 dark:bg-gray-800 cursor-pointer"></label> --}}
+                                    <?php }else{
+                                        ?>
+                                    <label class="switch">
+                                        <input id="permission" data-permission="{{ $permission->id }}"
+                                            class="mi_checkbox" type="checkbox" data-onstyle="success"
+                                            data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive"
+                                            data-user="{{ $user->id }}">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <?php } ?>
                                 </div>
                             </div>
                         @endforeach

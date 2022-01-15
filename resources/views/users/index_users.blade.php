@@ -2,12 +2,11 @@
 @section('title')
     Listado de permisos -
 @endsection
-@section('styles')
+@push('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-@endsection
+@endpush
 
 @section('content')
-    <a href="{{ route('create_user') }}">Crear permisos</a>
     @if ($users->count())
         <x-table>
             <table class="min-w-full divide-y divide-gray-200" id="Usuarios">

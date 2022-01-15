@@ -44,9 +44,9 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'surname' => $request->sur_name,
-            'type_identify_id' => $request->type_identify_id,
+            'type_identify_id' => $request->id_type_identification,
             'identify_number' => $request->identify_number,
-            'rol_id' => $request->rol_id,
+            'rol_id' => $request->id_type_rol,
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
@@ -55,14 +55,22 @@ class UserController extends Controller
     }
     public function permissions(Request $request)
     {
-        UserPermissions::where('user_id', '=', $request->idu)
-            ->where('permission_id', '=', $request->idp)->update(['state' => $request->state]);
+        if (UserPermissions::where('user_id', '=', $request->idu)->where('permission_id', '=', $request->idp)->get()->count()) {
+            UserPermissions::where('user_id', '=', $request->idu)
+                ->where('permission_id', '=', $request->idp)->update(['state' => $request->state]);
+        } else {
+            UserPermissions::create([
+                'user_id' => $request->idu,
+                'permission_id' => $request->idp,
+                'state' => $request->state,
+                'by' => Auth::user()->id
+            ]);
+        }
         if ($request->state == 0) {
             $Estado = 0;
         } else {
             $Estado = 1;
         }
-
         return response()->json(['var' => '' . $Estado . '']);
     }
     public function update($user)
