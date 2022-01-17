@@ -13,13 +13,17 @@
             </div>
             <div class="mb-4">
                 <x-jet-label value="Nombre"></x-jet-label>
-                <x-jet-input type="text" class="w-full" wire:model.defer="name"></x-jet-input>
+                <x-jet-input type="text" class="w-full" wire:model="name"></x-jet-input>
+                <x-jet-input-error for="name" />
             </div>
             <div class="mb-4">
                 <x-jet-label value="Descripcion"></x-jet-label>
                 <textarea
                     class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                    rows="4" wire:model.defer="description"></textarea>
+                    rows="4" wire:model="description"></textarea>
+                @error('description')
+                    <span>{{ $message }}</span>
+                @enderror
             </div>
         </x-slot>
         <x-slot name="footer">

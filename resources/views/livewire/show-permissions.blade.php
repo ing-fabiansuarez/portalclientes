@@ -1,6 +1,25 @@
 <div>
     @push('css')
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        <style>
+            thead,
+            th {
+                background-color: #D290F4;
+                font-style: italic;
+                color: white;
+            }
+
+            table tbody tr:nth-child(odd) {
+                background-color: #fff;
+                color: black
+            }
+
+            table tbody tr:nth-child(even) {
+                background-color: #e9bdff;
+                color: rgb(0, 0, 0)
+            }
+
+        </style>
     @endpush
     <div class="flex justify-center">
         @livewire('create-permission')
@@ -8,23 +27,23 @@
     <x-table>
         @if ($permissions->count())
             <table class="min-w-full divide-y divide-gray-200 max-w-fit" id="Permisos">
-                <thead class="bg-gray-50">
+                <thead>
                     <tr>
-                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
                             Id
                         </th>
-                        <th scope="col" class=" px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
                             Nombre
                         </th>
-                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-xs font-medium  uppercase tracking-wider">
                             Descripcion
                         </th>
-                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
                             Acciones
                         </th>
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
+                <tbody class="divide-y divide-gray-200">
                     @foreach ($permissions as $permission)
                         <tr>
                             <td class="px-6 py-4">
