@@ -2,44 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Fortify\PasswordValidationRules;
 use App\Models\Permissions;
+use App\Models\Phones;
 use App\Models\Roles;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserPermissions;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    use PasswordValidationRules;
     public function index()
     {
-        /*   dd(Auth::user()->identify_number);
-        $users = User::where('identify_number', '!=', Auth::user()->identify_number)->get(); */
+        $users = DB::table('users')
+            ->join('roles', 'users.rol_id', '=', 'roles.id')
+            ->select('users.*', 'roles.id as idroles', 'roles.name as rol')
+            ->get();
 
-        $users = User::all();
         return view('users.index_users', compact('users'));
     }
     public function create()
     {
-        $roles = Roles::where('name', '!=', 'Administrador')->get();
         return view('users.create_user');
     }
-    public function edit(User $user)
+    public function edit($id)
     {
         $permissions = Permissions::all();
-        return view('users.edit_user', compact('user', 'permissions'));
+        $user = User::find($id);
+        $phones = Phones::NumberPhones($id);
+        return view('users.edit_user', compact('user', 'permissions', 'phones'));
     }
     public function store(Request $request)
     {
-        /* Validator::make($request, [
+        $request->validate([
             'name' => ['required', 'string', 'max:100'],
             'sur_name' => ['required', 'string', 'max:100'],
-            'type_identify_id' => ['required'],
+            'id_type_identification' => ['required'],
             'identify_number' => ['required', 'numeric', 'unique:users'],
+            'number_phone' => ['required', 'numeric', 'digits:10'],
+            'number_phone2i' => ['numeric', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'rol_id' => ['required', 'string'],
-        ])->validate(); */
+            'password' => $this->passwordRules(),
+            'id_type_rol' => ['required'],
+        ]);
 
         User::create([
             'name' => $request->name,
@@ -51,13 +60,33 @@ class UserController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
+        $idUser = User::UserId($request->identify_number, $request->id_type_identification);
+        if (empty($request->number_phone2i)) {
+            Phones::create([
+                'number' => $request->number_phone,
+                'user_id' => $idUser->id
+            ]);
+        } else {
+            Phones::create([
+                'number' => $request->number_phone,
+                'user_id' => $idUser->id
+            ]);
+            Phones::create([
+                'number' => $request->number_phone2i,
+                'user_id' => $idUser->id
+            ]);
+        }
         return redirect()->route('list_users');
     }
+
     public function permissions(Request $request)
     {
-        if (UserPermissions::where('user_id', '=', $request->idu)->where('permission_id', '=', $request->idp)->get()->count()) {
+        if (UserPermissions::where('user_id', '=', $request->idu)
+            ->where('permission_id', '=', $request->idp)->get()->count()
+        ) {
             UserPermissions::where('user_id', '=', $request->idu)
-                ->where('permission_id', '=', $request->idp)->update(['state' => $request->state]);
+                ->where('permission_id', '=', $request->idp)
+                ->update(['state' => $request->state]);
         } else {
             UserPermissions::create([
                 'user_id' => $request->idu,
@@ -73,8 +102,58 @@ class UserController extends Controller
         }
         return response()->json(['var' => '' . $Estado . '']);
     }
-    public function update($user)
+    public function update(Request $request)
     {
-        return $user;
+        $request->validate([
+            'number_phone' => ['required', 'numeric', 'digits:10'],
+            'id_type_rol' => ['required'],
+        ]);
+
+        User::where('id', '=', $request->id)
+            ->update(['rol_id' => $request->id_type_rol]);
+
+        $query = Phones::where('user_id', '=', $request->id)->get();
+        if (count($query) == 0) {
+            if (empty($request->number_phone2)) {
+                Phones::create([
+                    'number' => $request->number_phone,
+                    'user_id' => $request->id
+                ]);
+            } else {
+                Phones::create([
+                    'number' => $request->number_phone,
+                    'user_id' => $request->id
+                ]);
+                Phones::create([
+                    'number' => $request->number_phone2,
+                    'user_id' => $request->id
+                ]);
+            }
+        } else {
+            if (empty($request->number_phone2)) {
+                Phones::where('user_id', '=', $request->id)
+                    ->where('id', '=', $request->idPhone1)
+                    ->update([
+                        'number' => $request->number_phone
+                    ]);
+                Phones::where('user_id', '=', $request->id)
+                    ->where('id', '=', $request->idPhone2)
+                    ->update([
+                        'number' => ''
+                    ]);
+            } else {
+                Phones::where('user_id', '=', $request->id)
+                    ->where('id', '=', $request->idPhone1)
+                    ->update([
+                        'number' => $request->number_phone
+                    ]);
+                Phones::where('user_id', '=', $request->id)
+                    ->where('id', '=', $request->idPhone2)
+                    ->update([
+                        'number' => $request->number_phone2
+                    ]);
+            }
+        }
+        return redirect()->route('list_users');
     }
 }

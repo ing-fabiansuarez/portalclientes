@@ -44,7 +44,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('create', [UserController::class, 'create'])->name('create_user');
         Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-        Route::put('{userJ}', [UserController::class, 'update'])->name('users.update');
+        Route::post('updated', [UserController::class, 'update'])->name('users.update');
         Route::get('permisos', [UserController::class, 'permissions'])->name('users.edit_permissions');
     });
     //Permisos
@@ -53,5 +53,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     });
 
     //Perfil
-    Route::get('perfil',[ProfileController::class,'index'])->name('user.personal_edit');
+    Route::get('perfil', [ProfileController::class, 'index'])->name('user.personal_edit');
 });

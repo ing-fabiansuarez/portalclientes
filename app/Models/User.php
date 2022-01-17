@@ -62,4 +62,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public static function UserId($document, $type_document)
+    {
+        $idUser = User::select('id')->where('identify_number', '=', $document)
+            ->where('type_identify_id', '=', $type_document)->first();
+        return ($idUser);
+    }
 }
