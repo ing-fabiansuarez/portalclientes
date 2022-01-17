@@ -1,6 +1,8 @@
 <?php
 
+use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,4 +51,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::group(['prefix' => 'permisos'], function () {
         Route::get('index', [PermissionController::class, 'index'])->name('permissions.index');
     });
+
+    //Perfil
+    Route::get('perfil',[ProfileController::class,'index'])->name('user.personal_edit');
 });
