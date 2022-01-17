@@ -1,6 +1,5 @@
 <div>
     @push('css')
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
         <style>
             thead,
             th {
@@ -35,7 +34,7 @@
                         <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
                             Nombre
                         </th>
-                        <th scope="col" class="px-6 py-3 text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
                             Descripcion
                         </th>
                         <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
@@ -73,15 +72,12 @@
         @endif
     </x-table>
     @push('js')
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
-        </script>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             Livewire.on('deletePermission', permId => {
                 Swal.fire({
                     title: '¿Estas seguro de eliminar el permiso?',
-                    text: "",
+                    text: "...",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -98,9 +94,6 @@
                         )
                     }
                 })
-            });
-            $(document).ready(function() {
-                $('#Permisos').DataTable();
             });
         </script>
     @endpush

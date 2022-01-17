@@ -13,12 +13,14 @@
             <div class="mb-4">
                 <x-jet-label value="Nombre"></x-jet-label>
                 <x-jet-input wire:model="perm.name" type="text" class="w-full" />
+                <x-jet-input-error for="perm.name" />
             </div>
             <div class="mb-4">
                 <x-jet-label value="Descripcion"></x-jet-label>
                 <textarea
                     class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                     rows="4" wire:model="perm.description"></textarea>
+                <x-jet-input-error for="perm.description" />
             </div>
         </x-slot>
         <x-slot name="footer">

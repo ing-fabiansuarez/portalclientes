@@ -1,5 +1,5 @@
 <div>
-    <x-jet-secondary-button wire:click="$set('open',true)" class="bg-purple-400">
+    <x-jet-secondary-button wire:click="$set('open',true)">
         Crear permiso
     </x-jet-secondary-button>
 
@@ -21,9 +21,7 @@
                 <textarea
                     class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                     rows="4" wire:model="description"></textarea>
-                @error('description')
-                    <span>{{ $message }}</span>
-                @enderror
+                    <x-jet-input-error for="description" />
             </div>
         </x-slot>
         <x-slot name="footer">
