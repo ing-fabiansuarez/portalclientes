@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProdutsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProdutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('produts', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name_product');
             $table->boolean('active');
