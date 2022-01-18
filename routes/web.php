@@ -4,6 +4,7 @@ use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Users\IndexUsers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,7 +41,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     //USUARIOS
     Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('listado', [UserController::class, 'index'])->name('list_users');
+        Route::get('listado', [UserController::class,'index'])->name('list_users');
         Route::get('create', [UserController::class, 'create'])->name('create_user');
         Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('{user}/edit', [UserController::class, 'edit'])->name('users.edit');

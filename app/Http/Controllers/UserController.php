@@ -18,12 +18,7 @@ class UserController extends Controller
     use PasswordValidationRules;
     public function index()
     {
-        $users = DB::table('users')
-            ->join('roles', 'users.rol_id', '=', 'roles.id')
-            ->select('users.*', 'roles.id as idroles', 'roles.name as rol')
-            ->get();
-
-        return view('users.index_users', compact('users'));
+        return view('users.index_users');
     }
     public function create()
     {
@@ -44,7 +39,6 @@ class UserController extends Controller
             'id_type_identification' => ['required'],
             'identify_number' => ['required', 'numeric', 'unique:users'],
             'number_phone' => ['required', 'numeric', 'digits:10'],
-            'number_phone2i' => ['numeric', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'id_type_rol' => ['required'],
@@ -106,7 +100,7 @@ class UserController extends Controller
     {
         $request->validate([
             'number_phone' => ['required', 'numeric', 'digits:10'],
-            'id_type_rol' => ['required'],
+            'id_type_rol' => ['required']
         ]);
 
         User::where('id', '=', $request->id)
