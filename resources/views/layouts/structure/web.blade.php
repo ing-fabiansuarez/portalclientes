@@ -60,6 +60,7 @@
     <script src="{{asset('assets/js/pages/dashboard/dataSeries.script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
     <script src="{{asset('assets/js/pages/dashboard/dashboard.v1.script.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @livewireScripts
 </body>
 
