@@ -41,68 +41,16 @@ Crear Pedido -
                         <button class="btn btn btn-block btn-primary" type="button">View Cart <span class="badge float-right text-white bg-warning-500 mr-3">0</span></button>
                     </div>
                     <P class="text-primary-500 font-bold mt-5">Productos </P>
+                    @foreach($products as $product)
                     <div class="mt-3">
                         <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" /><span class="ml-2">Low To High</span>
+                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" />
+                            <span class="ml-2">
+                                {{$product->name_product}}
+                            </span>
                         </label>
                     </div>
-                    <div class="mb-5">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" /><span class="ml-2">High To Low</span>
-                        </label>
-                    </div>
-                    <!-- <P class="text-primary-500 font-bold mb-2">Category </P> -->
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" /><span class="ml-2">Mobile</span>
-                        </label>
-                    </div>
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" /><span class="ml-2">Speaker</span>
-                        </label>
-                    </div>
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" /><span class="ml-2">Furniture</span>
-                        </label>
-                    </div>
-                    <div class="mb-5">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-radio bg-gray-200 border border-gray-200 text-primary-500" type="radio" name="accountType" value="personal" /><span class="ml-2">Watch</span>
-                        </label>
-                    </div>
-                    <!-- <P class="text-primary-500 font-bold mb-2">Brand </P> -->
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-checkbox rounded text-primary-500 border border-gray-200 bg-gray-200" type="checkbox" /><span class="ml-2">apple(3)</span>
-                        </label>
-                    </div>
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-checkbox rounded text-primary-500 border border-gray-200 bg-gray-200" type="checkbox" /><span class="ml-2">Huwaei(1)</span>
-                        </label>
-                    </div>
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-checkbox rounded text-primary-500 border border-gray-200 bg-gray-200" type="checkbox" /><span class="ml-2">sony(3)</span>
-                        </label>
-                    </div>
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-checkbox rounded text-primary-500 border border-gray-200 bg-gray-200" type="checkbox" /><span class="ml-2">samsung(2)</span>
-                        </label>
-                    </div>
-                    <div class="mb-1">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-checkbox rounded text-primary-500 border border-gray-200 bg-gray-200" type="checkbox" /><span class="ml-2">xiaomi(2)</span>
-                        </label>
-                    </div>
-                    <div class="mb-5">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input class="form-checkbox rounded text-primary-500 border border-gray-200 bg-gray-200" type="checkbox" /><span class="ml-2">asus(2)</span>
-                        </label>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

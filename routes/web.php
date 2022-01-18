@@ -1,7 +1,9 @@
 <?php
 
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Users\IndexUsers;
@@ -34,14 +36,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     //PEDIDOS
     Route::group(['prefix' => 'pedidos'], function () {
-        Route::get('crear', function () {
-            return view('orders.create-order');
-        })->name('create_order');
+        Route::get('crear', [OrderController::class, 'list'])->name('create_order');
     });
 
     //USUARIOS
     Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('listado', [UserController::class,'index'])->name('list_users');
+        Route::get('listado', [UserController::class, 'index'])->name('list_users');
         Route::get('create', [UserController::class, 'create'])->name('create_user');
         Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('{user}/edit', [UserController::class, 'edit'])->name('users.edit');
