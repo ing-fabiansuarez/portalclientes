@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use App\Models\Reference;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Database\Seeder;
+
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,9 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Storage::deleteDirectory('references');
+        Storage::makeDirectory('references');
+
+
         $this->call(TypeIdentifySeeder::class);
         $this->call(RolesSeeder::class);
         Product::factory(30)->create();
-        Reference::factory(200)->create();
+        $this->call(ReferencesSeeder::class);
     }
 }

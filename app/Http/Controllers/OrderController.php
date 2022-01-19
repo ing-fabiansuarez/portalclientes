@@ -9,7 +9,6 @@ class OrderController extends Controller
 {
     public function list()
     {
-        $products = Product::where('active', true)->orderBy('score', 'desc')->get();
-        return view('orders.create-order')->with('products', $products);
+        return view('orders.create-order');
     }
 }

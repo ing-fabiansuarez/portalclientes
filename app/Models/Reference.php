@@ -9,5 +9,13 @@ class Reference extends Model
 {
     use HasFactory;
     protected $table = 'references';
-    protected $primaryKey = 'num_ref';
+    protected $primaryKey = 'id';
+
+
+    //relaicon uno a uno polimorfinca
+
+    public function image()
+    {
+        return $this->morphOne(Images::class, 'imageable');
+    }
 }
