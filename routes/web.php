@@ -22,9 +22,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return view('home');
     })->name('home_system');
 
-    /* Route::get('/', function () {
-        return view('welcome');
-    }); */
 
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -40,12 +37,18 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     //USUARIOS
     Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('registrar', function () {
-            return view('users.register');
-        })->name('register_user');
-        Route::get('listado', [UserController::class, "index"])->name('list_users');
+        Route::get('listado', [UserController::class, 'index'])->name('list_users');
         Route::get('create', [UserController::class, 'create'])->name('create_user');
+        Route::post('store', [UserController::class, 'store'])->name('user.store');
         Route::get('{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-        Route::put('{userJ}', [UserController::class, 'update'])->name('users.update');
+        Route::post('updated', [UserController::class, 'update'])->name('users.update');
+        Route::get('permisos', [UserController::class, 'permissions'])->name('users.edit_permissions');
     });
+    //Permisos
+    Route::group(['prefix' => 'permisos'], function () {
+        Route::get('index', [PermissionController::class, 'index'])->name('permissions.index');
+    });
+
+    //Perfil
+    Route::get('perfil', [ProfileController::class, 'index'])->name('user.personal_edit');
 });
