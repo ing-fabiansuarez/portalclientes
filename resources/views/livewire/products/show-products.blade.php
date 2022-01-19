@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="ul-ecommerce-wrapper relative">
+    <div class="ul-ecommerce-wrapper relative mt-6">
         <div class="ul-ecommerce-sidebar-overlay"></div>
         <div class="ul-ecommerce-sidebar">
             <div class="card">
@@ -51,13 +51,15 @@
             <div class="grid grid-cols-12 gap-5 mb-5">
                 @foreach ($references as $reference)
                     <div class="col-span-12 xl:col-span-4 md:col-span-6">
-                        <div class="card overflow-hidden relative"><img src="./assets/images/products/iphone-1.jpg" />
+                        <div class="card overflow-hidden relative"><img
+                                src="{{ Storage::url($reference->image->url) }}" />
                             <div class="card-body">
-                                <div class="mb-1"><a class="text-gray-600 hover:text-gray-700"
-                                        href="#">Wireless
-                                        Bluetooth
-                                        V4.0 Portable Speaker with HD Sound and Bass apple</a></div>
-                                <p class="font-semibold mb-4">Apple</p>
+                                <div class="mb-1">
+                                    <a class="text-gray-600 hover:text-gray-700" href="#">
+                                        {{ $reference->name_ref }}
+                                    </a>
+                                </div>
+                                <p class="font-semibold mb-4">{{ $reference->product_id }}</p>
                                 <div class="flex justify-between">
                                     <div class="flex mb-2"><span
                                             class="material-icons text-warning-500">grade</span><span
@@ -80,7 +82,7 @@
                 {{ $references->links() }}
             </div>
         </div>
-        
+
 
     </div>
 </div>
