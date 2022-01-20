@@ -8,12 +8,16 @@ use Livewire\Component;
 class ShowPermissions extends Component
 {
     protected $listeners=['render'=>'render','delete'];
+
+    /*Funcion render: Envia la informacion de todos los permisos existentes*/
     public function render()
     {
-        $permissions=Permissions::all();
+        $permissions = Permissions::all();
         return view('livewire.show-permissions', compact('permissions'));
     }
-    public function delete(Permissions $id){
+    /**Elimina el permiso seleccionado: El llamado se realiza mediante ajax */
+    public function delete(Permissions $id)
+    {
         $id->delete();
     }
 }

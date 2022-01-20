@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permissions;
-use Illuminate\Http\Request;
 
 class PermissionController extends Controller
 {
+    /*Funcion index: hace el llamado de la vista index_permissions en la cual se alojan los componentes de 
+    livewire creados para la edicion, eliminacion y creacion de permisos*/
     public function index()
     {
-        $permissions = Permissions::all();
-        return view('permissions.index_permissions', compact('permissions'));
+        return view('permissions.index_permissions');
     }
 }

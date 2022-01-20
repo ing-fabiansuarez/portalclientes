@@ -13,14 +13,19 @@ class EditPermissions extends Component
         'perm.name' => 'required',
         'perm.description' => 'required'
     ];
+
     public function mount(Permissions $permission)
     {
         $this->perm = $permission;
     }
+
     public function render()
     {
         return view('livewire.edit-permission');
     }
+
+    /**Funcion save: Valida y guarda el permiso actualizado y renderiza la vista
+     */
     public function save()
     {
         $this->validate();
@@ -29,3 +34,4 @@ class EditPermissions extends Component
         $this->emitTo('show-permissions','render');
     }
 }
+

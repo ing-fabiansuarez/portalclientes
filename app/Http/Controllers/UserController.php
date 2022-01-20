@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Actions\Fortify\PasswordValidationRules;
 use App\Models\Permissions;
-use App\Models\Phones;
 use App\Models\Roles;
+use App\Models\Phones;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserPermissions;
@@ -16,21 +16,19 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     use PasswordValidationRules;
+
+    //Redirije a la vista de index que en su content posee los componentes de livewire
     public function index()
     {
         return view('users.index_users');
     }
+    //Redirige a la vista crear
     public function create()
     {
         return view('users.create_user');
     }
-    public function edit($id)
-    {
-        $permissions = Permissions::all();
-        $user = User::find($id);
-        $phones = Phones::NumberPhones($id);
-        return view('users.edit_user', compact('user', 'permissions', 'phones'));
-    }
+    //Este metodo recibe un request del formulario create, valida la informacion y la almacena
+    //en la tabla users, ademas, tambien guarda los phones del usuario validando si solo se digito uno solo o los dos
     public function store(Request $request)
     {
         $request->validate([
@@ -73,6 +71,7 @@ class UserController extends Controller
         return redirect()->route('list_users');
     }
 
+    //Funcion permissions: Es llamada a traves de js y crea o actualiza los permisos de usuarios
     public function permissions(Request $request)
     {
         if (UserPermissions::where('user_id', '=', $request->idu)
@@ -95,59 +94,5 @@ class UserController extends Controller
             $Estado = 1;
         }
         return response()->json(['var' => '' . $Estado . '']);
-    }
-    public function update(Request $request)
-    {
-        $request->validate([
-            'number_phone' => ['required', 'numeric', 'digits:10'],
-            'id_type_rol' => ['required']
-        ]);
-
-        User::where('id', '=', $request->id)
-            ->update(['rol_id' => $request->id_type_rol]);
-
-        $query = Phones::where('user_id', '=', $request->id)->get();
-        if (count($query) == 0) {
-            if (empty($request->number_phone2)) {
-                Phones::create([
-                    'number' => $request->number_phone,
-                    'user_id' => $request->id
-                ]);
-            } else {
-                Phones::create([
-                    'number' => $request->number_phone,
-                    'user_id' => $request->id
-                ]);
-                Phones::create([
-                    'number' => $request->number_phone2,
-                    'user_id' => $request->id
-                ]);
-            }
-        } else {
-            if (empty($request->number_phone2)) {
-                Phones::where('user_id', '=', $request->id)
-                    ->where('id', '=', $request->idPhone1)
-                    ->update([
-                        'number' => $request->number_phone
-                    ]);
-                Phones::where('user_id', '=', $request->id)
-                    ->where('id', '=', $request->idPhone2)
-                    ->update([
-                        'number' => ''
-                    ]);
-            } else {
-                Phones::where('user_id', '=', $request->id)
-                    ->where('id', '=', $request->idPhone1)
-                    ->update([
-                        'number' => $request->number_phone
-                    ]);
-                Phones::where('user_id', '=', $request->id)
-                    ->where('id', '=', $request->idPhone2)
-                    ->update([
-                        'number' => $request->number_phone2
-                    ]);
-            }
-        }
-        return redirect()->route('list_users');
     }
 }
