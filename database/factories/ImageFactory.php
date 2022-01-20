@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ImagesFactory extends Factory
+class ImageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -13,8 +13,6 @@ class ImagesFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'url' => 'references/' . $this->faker->image('public/storage/references', 640, 480, null, false),
-        ];
+        return [];
     }
 }

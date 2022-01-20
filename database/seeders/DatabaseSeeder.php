@@ -20,11 +20,13 @@ class DatabaseSeeder extends Seeder
     {
         Storage::deleteDirectory('references');
         Storage::makeDirectory('references');
+        Storage::makeDirectory('products');
+
 
 
         $this->call(TypeIdentifySeeder::class);
         $this->call(RolesSeeder::class);
-        Product::factory(30)->create();
+        $this->call(ProductSeeder::class);
         $this->call(ReferencesSeeder::class);
     }
 }

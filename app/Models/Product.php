@@ -11,4 +11,10 @@ class Product extends Model
     protected $table = 'products';
     protected $primaryKey = 'id';
     public $incrementing = true;
+
+    //relaicon uno a uno polimorfinca
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }
