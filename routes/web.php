@@ -1,12 +1,9 @@
 <?php
 
-use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
-use App\Http\Livewire\Users\IndexUsers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +45,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::post('updated', [UserController::class, 'update'])->name('users.update');
         Route::get('permisos', [UserController::class, 'permissions'])->name('users.edit_permissions');
     });
+    
     //Permisos
     Route::group(['prefix' => 'permisos'], function () {
         Route::get('index', [PermissionController::class, 'index'])->name('permissions.index');

@@ -39,7 +39,7 @@ class UserController extends Controller
             'number_phone' => ['required', 'numeric', 'digits:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            'id_type_rol' => ['required'],
+            'id_type_rol' => ['required']
         ]);
 
         User::create([

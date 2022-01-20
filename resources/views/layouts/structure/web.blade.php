@@ -58,12 +58,13 @@
     <script src="{{ asset('assets/js/pages/modal.min.js') }}"></script>
     <script src="{{ asset('assets/js/pages/dashboard/dataSeries.script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
-
-    <script src="{{asset('assets/js/pages/dashboard/dashboard.v1.script.js')}}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('assets/js/pages/dashboard/dashboard.v1.script.js') }}"></script>
 
-    
+    {{-- Jquery Ivan Popper --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js"></script>
+
     @stack('modals')
 
     @livewireScripts

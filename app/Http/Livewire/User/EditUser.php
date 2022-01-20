@@ -26,7 +26,7 @@ class EditUser extends Component
             'user.type_identify_id' => ['required'],
             'user.identify_number' =>  ['required', 'numeric', 'unique:users,identify_number,' . $this->user->id],
             'user.rol_id' => 'required',
-            'user.email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $this->user->email],
+            'user.email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $this->user->id],
             'number_phone1' => ['required', 'numeric', 'digits:10'],
             'number_phone2' => ['nullable']
         ];

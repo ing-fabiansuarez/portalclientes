@@ -5,11 +5,11 @@
                         class="i-Shop-4 text-3xl"></i>
                     <p>Inicio</p>
                 </a></li>
-            <li class="nav-item" data-item="apps"><a class="nav-item-hold" href="#"><i
+            <li class="nav-item" data-item="apps"><a class="nav-item-hold"><i
                         class="i-Computer-Secure text-3xl"></i>
                     <p>Mis Pedidos</p>
                 </a></li>
-            <li class="nav-item" data-item="profile"><a class="nav-item-hold" href="#"><i
+            <li class="nav-item" data-item="profile"><a class="nav-item-hold"><i
                         class="i-Find-User text-3xl"></i>
                     <p>Usuarios</p>
                 </a>
