@@ -1,19 +1,19 @@
 <div class="container mx-auto">
     <div class="grid grid-cols-12 gap-5 mb-5">
-        @foreach ($products as $products)
-            <div class="col-span-12 xl:col-span-3 md:col-span-6">
-                <div class="card overflow-hidden relative"><img src="#" />
+        @foreach ($products as $product)
+            <div class="col-span-12 @if ($loop->first)xl:col-span-3 @else xl:col-span-3 @endif  md:col-span-6">
+                <div class="card overflow-hidden relative"><img src="{{ Storage::url($product->image->url) }}" />
                     <div class="card-body">
                         <div class="mb-1">
                             <a class="text-gray-600 hover:text-gray-700" href="#">
-                                {{ $products->name_product }}
+                                {{ $product->name_product }}
                             </a>
                         </div>
-                        <p class="font-semibold mb-4">{{ $products->category_idcategory }}</p>
-                        
-                        <div class="flex justify-between flex-wrap">
-                            <button class="btn ripple btn-primary mb-2" type="button">Ver Productos</button>
-                            <button class="btn btn-primary-outline mb-2" type="button">Ver Productos</button>
+                        <p class="font-semibold mb-4">{{ $product->category_idcategory }}</p>
+
+                        <div class="flex justify-items-end">
+                            <a href="{{route('references_by_product',$product)}}" class="btn btn-primary mb-2" >Agregar Productos</a>
+                            
                         </div>
                     </div>
                 </div>

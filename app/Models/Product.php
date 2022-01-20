@@ -17,4 +17,8 @@ class Product extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    public function references(){
+        return $this->hasMany(Reference::class,'product_id','id');
+    }
 }

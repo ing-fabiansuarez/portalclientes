@@ -11,4 +11,10 @@ class OrderController extends Controller
     {
         return view('orders.create-order');
     }
+
+    public function viewReferncesByProduct(Product $product)
+    {
+        dd($product->references());
+        return view('orders.show-references-by-product', compact('product'));
+    }
 }
