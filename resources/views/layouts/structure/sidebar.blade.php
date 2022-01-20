@@ -2,8 +2,12 @@
     <div class="sidebar-left open" data-perfect-scrollbar="" data-suppress-scroll-x="true">
         <ul class="navigation-left">
             <li class="nav-item active"><a class="nav-item-hold" href="{{ route('home_system') }}"><i
-                        class="i-Shop-4 text-3xl"></i>
+                        class="i-Bar-Chart text-3xl"></i>
                     <p>Inicio</p>
+                </a></li>
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('create_order') }}"><i
+                        class="i-Computer-Secure text-3xl"></i>
+                    <p>Crear Pedido</p>
                 </a></li>
             <li class="nav-item" data-item="apps"><a class="nav-item-hold"><i
                         class="i-Computer-Secure text-3xl"></i>

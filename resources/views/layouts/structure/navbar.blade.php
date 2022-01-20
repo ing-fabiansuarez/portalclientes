@@ -23,7 +23,7 @@
             <button class="material-icons menu-toggle cursor-pointer text-gray-500 align-middle focus:outline-none "
                 type="button">menu</button>
         </div>
-        <div class="ul-dropdown mega-menu mr-3" id="dropdownWrapper">
+        {{-- <div class="ul-dropdown mega-menu mr-3" id="dropdownWrapper">
             <button class="btn-sm mx-3 focus:outline-none dropdown-button" data-toggle="dropdown">
                 <div class="flex items-center">
                     <p class="mr-2">Navegar</p><i class="i-Arrow-Down"></i>
@@ -80,13 +80,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="relative text-gray-600 search-bar mx-3">
+        </div> --}}
+       {{--  <div class="relative text-gray-600 search-bar mx-3">
             <input class=" bg-gray-100 h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" type="search"
                 name="search" placeholder="Search" />
             <button class="absolute right-0 top-0 mt-2 mr-4 focus:outline-none" type="submit"><span
                     class="material-icons text-gray-300">search</span></button>
-        </div>
+        </div> --}}
         <div>
             <div class="search-ui">
                 <div class="container-fluid">
