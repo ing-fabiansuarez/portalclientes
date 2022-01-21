@@ -14,5 +14,5 @@
         </div>
     </div>
     <!-- Start:: content (Your custom content)-->
-    @livewire('products.show-products')
+    @livewire('categories.show-categories')
 @endsection

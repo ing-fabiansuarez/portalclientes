@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -20,16 +22,6 @@ class CategorySeeder extends Seeder
             'code'=>'01',
         ]);
         DB::table('categories')->insert([
-            'id' => 4,
-            'name' => 'clasicas',
-            'code'=>'01.aa',
-        ]);
-        DB::table('categories')->insert([
-            'id' => 5,
-            'name' => 'plataformas',
-            'code'=>'01.ab',
-        ]);
-        DB::table('categories')->insert([
             'id' => 2,
             'name' => 'Ropa',
             'code'=>'02',
@@ -38,6 +30,21 @@ class CategorySeeder extends Seeder
             'id' => 3,
             'name' => 'Cosmeticos',
             'code'=>'03',
+        ]);
+        Image::factory(1)->create([
+            'imageable_id' => 1,
+            'imageable_type' => Category::class,
+            'url' => 'categories/1.jpg',
+        ]);
+        Image::factory(1)->create([
+            'imageable_id' => 2,
+            'imageable_type' => Category::class,
+            'url' => 'categories/2.jpg',
+        ]);
+        Image::factory(1)->create([
+            'imageable_id' => 3,
+            'imageable_type' => Category::class,
+            'url' => 'categories/3.jpg',
         ]);
     }
 }

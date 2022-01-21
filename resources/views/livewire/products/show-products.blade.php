@@ -2,7 +2,7 @@
     <div class="grid grid-cols-12 gap-5 mb-5">
         @foreach ($products as $product)
             <div class="col-span-12 @if ($loop->first)xl:col-span-3 @else xl:col-span-3 @endif  md:col-span-6">
-                <div class="card overflow-hidden relative"><img src="{{ Storage::url($product->image->url) }}" />
+                <div class="card overflow-hidden relative"><img src="{{ '#' }}" />
                     <div class="card-body">
                         <div class="mb-1">
                             <a class="text-gray-600 hover:text-gray-700" href="#">
