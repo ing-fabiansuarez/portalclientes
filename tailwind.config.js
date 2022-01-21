@@ -12,7 +12,11 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                aguacate: ['aguacate']
             },
+            colors:{
+                primary:'#D290F4'
+            }
         },
     },
 

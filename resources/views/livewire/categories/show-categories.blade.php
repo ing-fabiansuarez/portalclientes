@@ -5,9 +5,10 @@
                 <div class="card">
                     <div class="card-body"><img class="rounded"
                             src="{{ Storage::url($category->image->url) }}" alt="First slide" />
-                        <p class="card-title font-semibold mt-4 uppercase">{{ $category->name }} </p>
+                        <p class="text-xl font-aguacate font-bold mt-4 uppercase">{{ $category->name }} </p>
                         <div class="my-3">
                             <div class="flex justify-between">
+                                <p class="bg-primary"> hola mundo</p>
                                 <div></div>
                                 <button class="btn btn-primary mb-2" type="button">Agregar Productos</button>
                             </div>
