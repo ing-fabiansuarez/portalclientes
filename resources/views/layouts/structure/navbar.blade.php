@@ -1,4 +1,4 @@
-<div class="header-2-wrapper">
+<div class="header-2-wrapper bgnd-navbar">
     <div class="flex items-center">
         <div class="logo flex justify-center">
             <svg class="fill-current" width="60" height="60" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg"
@@ -81,12 +81,12 @@
                 </div>
             </div>
         </div> --}}
-       {{--  <div class="relative text-gray-600 search-bar mx-3">
+        <div class="relative text-gray-600 search-bar mx-3">
             <input class=" bg-gray-100 h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" type="search"
                 name="search" placeholder="Search" />
             <button class="absolute right-0 top-0 mt-2 mr-4 focus:outline-none" type="submit"><span
                     class="material-icons text-gray-300">search</span></button>
-        </div> --}}
+        </div>
         <div>
             <div class="search-ui">
                 <div class="container-fluid">

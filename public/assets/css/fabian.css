@@ -11,3 +11,15 @@
     --fifth-color-corporative: #deacfc;
     --light-color-corporative: #d390f442;
 }
+
+.background-card-fabian {
+    background: var(--light-color-corporative);
+}
+
+.bgnd-navbar {
+    background: #deacfc !important;
+}
+
+.header-custom {
+    color: var(--black-color-corporative);
+}
