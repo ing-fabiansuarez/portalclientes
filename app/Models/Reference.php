@@ -17,4 +17,9 @@ class Reference extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

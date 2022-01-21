@@ -42,9 +42,9 @@ class CategorySeeder extends Seeder
             'url' => 'categories/2.jpg',
         ]);
         Image::factory(1)->create([
-            'imageable_id' => 3,
+            'imageable_id' => 1,
             'imageable_type' => Category::class,
-            'url' => 'categories/3.jpg',
+            'url' => 'categories/1.jpg',
         ]);
     }
 }

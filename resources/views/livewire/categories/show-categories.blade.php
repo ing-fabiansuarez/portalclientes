@@ -10,7 +10,8 @@
                             <div class="flex justify-between">
 
                                 <div></div>
-                                <button class="btn bg-white text-black mb-2" type="button">Agregar Productos</button>
+                                <a href="{{ route('references_by_category', $category) }}"
+                                    class="btn bg-white text-black mb-2 hover:bg-primary-50">Agregar Productos</a>
                             </div>
                         </div>
                     </div>
