@@ -10,37 +10,26 @@ module.exports = {
 
     theme: {
         extend: {
+            colors: {
+                'primary': '#d290f4',
+                'primary': {
+                    50: '#D290F4',
+                    100: '#D290F4',
+                    200: '#D290F4',
+                    300: '#D290F4',
+                    400: '#D290F4',
+                    500: '#D290F4',
+                    600: '#D290F4',
+                    700: '#D290F4',
+                    800: '#D290F4',
+                    900: '#D290F4',
+                },
+            },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                aguacate: ['aguacate']
             },
-        },
-        colors: {
-            transparent: 'transparent',
-            current: 'currentColor',
-            'white': '#ffffff',
-            'primary': {
-                100: '#D290F4',
-                200: '#D290F4',
-                300: '#D290F4',
-                400: '#D290F4',
-                500: '#D290F4',
-                600: '#D290F4',
-                700: '#D290F4',
-                800: '#D290F4',
-                900: '#D290F4',
-            },
-            gray: {
-                100: '#f7fafc',
-                200: '#edf2f7',
-                300: '#e2e8f0',
-                400: '#cbd5e0',
-                500: '#a0aec0',
-                600: '#718096',
-                700: '#4a5568',
-                800: '#2d3748',
-                900: '#1a202c',
-            },
-            // ...
+
         },
     },
 

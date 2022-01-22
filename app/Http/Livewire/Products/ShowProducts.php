@@ -14,9 +14,7 @@ class ShowProducts extends Component
     public function render()
     {
         $products = Product::where('active', true)->orderBy('score', 'desc')->get();
-        $references = Reference::where('active_ref', true)->paginate(5);
         return view('livewire.products.show-products')
-            ->with('products', $products)
-            ->with('references', $references);
+            ->with('products', $products);
     }
 }

@@ -18,13 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /* Storage::deleteDirectory('references');
-        Storage::makeDirectory('references'); */
+        Storage::deleteDirectory('references');
+        Storage::makeDirectory('references');
+        Storage::makeDirectory('products');
+
 
 
         $this->call(TypeIdentifySeeder::class);
         $this->call(RolesSeeder::class);
-        /* Product::factory(30)->create();
-        $this->call(ReferencesSeeder::class); */
+        $this->call(CategorySeeder::class);
+        //$this->call(ProductSeeder::class);
+        //$this->call(ReferencesSeeder::class);
     }
 }

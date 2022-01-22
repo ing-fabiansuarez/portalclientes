@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Category extends Model
 {
     use HasFactory;
-    protected $table = 'products';
+    protected $table = 'categories';
     protected $primaryKey = 'id';
     public $incrementing = true;
 
@@ -16,9 +16,5 @@ class Product extends Model
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
-    }
-
-    public function references(){
-        return $this->hasMany(Reference::class,'product_id','id');
     }
 }

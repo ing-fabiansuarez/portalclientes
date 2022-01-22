@@ -13,9 +13,13 @@ class Reference extends Model
 
 
     //relaicon uno a uno polimorfinca
-
     public function image()
     {
-        return $this->morphOne(Images::class, 'imageable');
+        return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 }

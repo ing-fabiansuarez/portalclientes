@@ -34,6 +34,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     //PEDIDOS
     Route::group(['prefix' => 'pedidos'], function () {
         Route::get('crear', [OrderController::class, 'list'])->name('create_order');
+        Route::get('productos/{product}', [OrderController::class, 'viewReferncesByProduct'])->name('references_by_product');
+        Route::get('categoria/{category}', [OrderController::class, 'viewReferncesByCategory'])->name('references_by_category');
     });
 
     //USUARIOS
@@ -45,7 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::post('updated', [UserController::class, 'update'])->name('users.update');
         Route::get('permisos', [UserController::class, 'permissions'])->name('users.edit_permissions');
     });
-    
+
     //Permisos
     Route::group(['prefix' => 'permisos'], function () {
         Route::get('index', [PermissionController::class, 'index'])->name('permissions.index');

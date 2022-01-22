@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/fabian.css') }}" />
     @livewireStyles
     <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- Estilos perzonalizados -->
