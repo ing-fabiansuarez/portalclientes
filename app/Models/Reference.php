@@ -11,6 +11,14 @@ class Reference extends Model
     protected $table = 'references';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'id',
+        'num_ref',
+        'product_id',
+        'name_ref',
+        'active_ref'
+    ];
+
 
     //relaicon uno a uno polimorfinca
     public function image()

@@ -14,7 +14,7 @@ class CreateReferencesTable extends Migration
     public function up()
     {
         Schema::create('references', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->integer('num_ref');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');

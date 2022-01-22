@@ -14,10 +14,11 @@ class CreatePricesTable extends Migration
     public function up()
     {
         Schema::create('prices', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->unsignedBigInteger('role_id')->nullable();
+            $table->id();
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->unsignedBigInteger('product_id');
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->double('cost');
             $table->timestamps();
         });
