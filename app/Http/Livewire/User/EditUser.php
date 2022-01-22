@@ -31,6 +31,7 @@ class EditUser extends Component
             'number_phone2' => ['nullable']
         ];
     }
+    
     /*Funcion mount: recibe los datos enviados desde la vista y valida si el usuario tiene numeros inscritos */
     public function mount($id_user)
     {
