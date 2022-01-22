@@ -1,7 +1,7 @@
 <div>
     @if ($users->count())
         <x-table>
-            <table class="table-fixed">
+            <table class="min-w-full">
                 <thead>
                     <tr>
                         <th scope="col" class="px-3 py-4 text-xs font-medium uppercase tracking-wider">
@@ -82,4 +82,3 @@
     @endif
     </x-table>
 </div>
-

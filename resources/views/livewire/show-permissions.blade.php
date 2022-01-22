@@ -20,12 +20,12 @@
 
         </style>
     @endpush
-    <div class="flex justify-center">
+    <div class="flex justify-center w-screen mb-4">
         @livewire('create-permission')
     </div>
     <x-table>
         @if ($permissions->count())
-            <table class="min-w-full divide-y divide-gray-200 max-w-fit" id="Permisos">
+            <table class="min-w-full" id="Permisos">
                 <thead>
                     <tr>
                         <th scope="col" class="px-6 py-3 text-xs font-medium uppercase tracking-wider">
@@ -98,4 +98,3 @@
         </script>
     @endpush
 </div>
-
