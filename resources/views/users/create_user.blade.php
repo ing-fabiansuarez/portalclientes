@@ -19,7 +19,7 @@
             <x-jet-authentication-card-logo />
         </x-slot>
         <x-jet-validation-errors class="mb-4" />
-        <form method="POST" action="{{ route('user.store') }}">
+        <form method="POST" action="{{ route('user.store') }}" class="px-4">
             @csrf
             <div>
                 <x-jet-label for="name" value="Nombre" />

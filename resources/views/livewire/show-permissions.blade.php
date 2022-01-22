@@ -20,7 +20,7 @@
 
         </style>
     @endpush
-    <div class="flex justify-center w-screen mb-4">
+    <div class="flex justify-center mb-4">
         @livewire('create-permission')
     </div>
     <x-table>
