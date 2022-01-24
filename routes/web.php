@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
@@ -55,4 +56,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     //Perfil
     Route::get('perfil', [ProfileController::class, 'index'])->name('user.personal_edit');
+
+    //Administracion
+    Route::group(['prefix' => 'administration'], function () {
+        Route::get('index_products', [AdministrationController::class, 'index_products'])->name('products.index');
+        Route::get('index_references', [AdministrationController::class, 'index_references'])->name('references.index');
+    });
 });

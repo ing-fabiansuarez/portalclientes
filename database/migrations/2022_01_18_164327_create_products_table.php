@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name_product');
             $table->boolean('active');
             $table->integer('score');
-            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });

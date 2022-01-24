@@ -10,10 +10,8 @@
                             </a>
                         </div>
                         <p class="font-semibold mb-4">{{ $product->category_idcategory }}</p>
-
                         <div class="flex justify-items-end">
                             <a href="{{route('references_by_product',$product)}}" class="btn btn-primary mb-2" >Agregar Productos</a>
-                            
                         </div>
                     </div>
                 </div>

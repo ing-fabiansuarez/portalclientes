@@ -18,6 +18,11 @@
                     <p>Usuarios</p>
                 </a>
             </li>
+            <li class="nav-item" data-item="administracion"><a class="nav-item-hold"><i
+                        class="i-Find-User text-3xl"></i>
+                    <p>Administracion</p>
+                </a>
+            </li>
             <li class="nav-item" data-item="permissions">
                 @php
                     $rol = App\Models\Roles::select('name')
@@ -25,7 +30,8 @@
                         ->first();
                 @endphp
                 <a class="nav-item-hold"
-                    href="https://api.whatsapp.com/send?phone=573175731042&text=Hola,%20mi%20nombre%20es%20{{ Auth::user()->name }},%20{{ $rol->name }}%20de%20PERA.SAS%20tengo%20un%20inconveniente%20%C2%BFMe%20puedes%20ayudar?">
+                    href="https://api.whatsapp.com/send?phone=573175731042&text=Hola,%20mi%20nombre%20es%20{{ Auth::user()->name }},%20{{ $rol->name }}%20de%20PERA.SAS%20tengo%20un%20inconveniente%20%C2%BFMe%20puedes%20ayudar?"
+                    target="_blank">
                     <i class="fab fa-whatsapp text-3xl"></i>
                     <p>Ayuda</p>
                 </a>
@@ -85,6 +91,12 @@
                         class="item-name">Asignar permisos de usuarios</span></a></li>
             <li><a href="{{ route('permissions.index') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
                         class="item-name">Permisos</span></a></li>
+        </ul>
+        <ul class="mb-4 childNav" data-parent="administracion" style="display:none">
+            <li><a href="{{ route('products.index') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
+                        class="item-name">Productos</span></a></li>
+            <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span
+                        class="item-name">Referencias</span></a></li>
         </ul>
         <!-- <ul class="mb-4 childNav" data-parent="widgets" style="display:none">
             <li><a href="widgets/widgets.charts.html"><i class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">Charts</span></a></li>
