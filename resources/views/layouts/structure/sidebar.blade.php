@@ -18,9 +18,16 @@
                     <p>Usuarios</p>
                 </a>
             </li>
-            <li class="nav-item" data-item="permissions"><a class="nav-item-hold"
-                    href="{{ route('permissions.index') }}"><i class="i-Find-User text-3xl"></i>
-                    <p>Permisos</p>
+            <li class="nav-item" data-item="permissions">
+                @php
+                    $rol = App\Models\Roles::select('name')
+                        ->where('id', Auth::user()->rol_id)
+                        ->first();
+                @endphp
+                <a class="nav-item-hold"
+                    href="https://api.whatsapp.com/send?phone=573175731042&text=Hola,%20mi%20nombre%20es%20{{ Auth::user()->name }},%20{{ $rol->name }}%20de%20PERA.SAS%20tengo%20un%20inconveniente%20%C2%BFMe%20puedes%20ayudar?">
+                    <i class="fab fa-whatsapp text-3xl"></i>
+                    <p>Ayuda</p>
                 </a>
             </li>
             <!-- <li class="nav-item" data-item="dashboard"><a class="nav-item-hold" href="#"><i class="i-Bar-Chart text-3xl"></i>
@@ -76,6 +83,8 @@
                         class="item-name">Registrar nuevo usuario</span></a></li>
             <li><a href="{{ route('list_users') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
                         class="item-name">Asignar permisos de usuarios</span></a></li>
+            <li><a href="{{ route('permissions.index') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
+                        class="item-name">Permisos</span></a></li>
         </ul>
         <!-- <ul class="mb-4 childNav" data-parent="widgets" style="display:none">
             <li><a href="widgets/widgets.charts.html"><i class="nav-icon i-Clock-3 text-base mr-2"></i><span class="item-name">Charts</span></a></li>
