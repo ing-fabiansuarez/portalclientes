@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Reference;
+
 class OrderController extends Controller
 {
-    public function index()
+    public function list()
     {
         return view('orders.create-order');
     }
 
-    /* public function viewReferncesByProduct(Product $product)
+    public function viewReferncesByProduct(Product $product)
     {
         dd($product->references());
         return view('orders.show-references-by-product', compact('product'));
@@ -19,5 +23,5 @@ class OrderController extends Controller
     {
         $references = Reference::where('active_ref', true)->paginate(10);
         return view('orders.show-references', compact('references'));
-    } */
+    }
 }
