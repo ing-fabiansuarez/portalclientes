@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\References;
 
+use App\Models\Category;
 use App\Models\Reference;
 use Livewire\Component;
 
@@ -9,7 +10,12 @@ class ShowReferencesTable extends Component
 {
     public $ref = "";
     public $idProduct = "";
+    public $category;
 
+    public function mount(Category $category)
+    {
+        $this->category = $category;
+    }
 
     public function render()
     {
@@ -25,6 +31,9 @@ class ShowReferencesTable extends Component
                 ->orWhere('name_ref', 'like', '%' . $this->ref . '%')
                 ->paginate(10);
         }
-        return view('livewire.references.show-references-table', compact('references'));
+        return view('livewire.references.show-references-table', [
+            'references' => $references,
+            'category' => $this->category
+        ]);
     }
 }
