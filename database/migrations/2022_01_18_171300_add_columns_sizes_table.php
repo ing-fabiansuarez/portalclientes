@@ -17,7 +17,7 @@ class AddColumnsSizesTable extends Migration
             $table->unsignedBigInteger('product_id')
                 ->after('id');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->boolean('active');
+            $table->boolean('active')->after('name');
         });
     }
 

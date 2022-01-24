@@ -31,7 +31,7 @@ class CategorySeeder extends Seeder
             'name' => 'Cosmeticos',
             'code'=>'03',
         ]);
-        Image::factory(1)->create([
+        /* Image::factory(1)->create([
             'imageable_id' => 1,
             'imageable_type' => Category::class,
             'url' => 'categories/1.jpg',
@@ -45,6 +45,6 @@ class CategorySeeder extends Seeder
             'imageable_id' => 1,
             'imageable_type' => Category::class,
             'url' => 'categories/1.jpg',
-        ]);
+        ]); */
     }
 }
