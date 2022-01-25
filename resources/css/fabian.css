@@ -23,3 +23,7 @@
 .header-custom {
     color: var(--black-color-corporative);
 }
+
+.btn-icon {
+    background: var(--primary-color-corporative);
+}

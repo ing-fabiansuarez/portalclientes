@@ -22,6 +22,9 @@ class OrderController extends Controller
     public function viewReferncesByCategory(Category $category)
     {
         $references = Reference::where('active_ref', true)->paginate(10);
-        return view('orders.show-references', compact('references'));
+        return view('orders.show-references', [
+            'references' => $references,
+            'category' => $category
+        ]);
     }
 }
