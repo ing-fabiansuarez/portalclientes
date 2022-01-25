@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImagesTable extends Migration
+class CreateObservationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('observation', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('url');
-            /* imageable_id no puede ser una llave foranea porque es una tabla polimorfica, ya que hay se agregaran las imagenes de categoias, referencias y productos */
-            $table->unsignedInteger('imageable_id');
-            $table->string('imageable_type');
+            $table->string('name', 45);
+            //product foreing key
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->boolean('active');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('observation');
     }
 }
