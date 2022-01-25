@@ -21,7 +21,7 @@
         </style>
     @endpush
     <div class="flex justify-center mb-4">
-        {{-- @livewire('create-permission') --}}
+        @livewire('administration.create-product')
     </div>
     <x-table>
         @if ($products->count())
@@ -76,10 +76,6 @@
                             </td>
                             <td class="px-6 py-4 flex">
                                 @livewire('administration.edit-products',['product'=>$product],key($product->id))
-                                {{-- <a class="ml-4"
-                                    wire:click="$emit('deletePermission',{{ $permission->id }})">
-                                    <i class="fas fa-trash">Eliminar</i>
-                                </a> --}}
                             </td>
                         </tr>
                     @endforeach
@@ -91,7 +87,4 @@
             </div>
         @endif
     </x-table>
-    @push('js')
-
-    @endpush
 </div>

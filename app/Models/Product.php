@@ -10,6 +10,13 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'id',
+        'name_product',
+        'active',
+        'score',
+        'category_id'
+    ];
     public $incrementing = true;
 
     //relaicon uno a uno polimorfinca
@@ -18,7 +25,8 @@ class Product extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    public function references(){
-        return $this->hasMany(Reference::class,'product_id','id');
+    public function references()
+    {
+        return $this->hasMany(Reference::class, 'product_id', 'id');
     }
 }

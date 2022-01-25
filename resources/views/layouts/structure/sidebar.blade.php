@@ -95,7 +95,7 @@
         <ul class="mb-4 childNav" data-parent="administracion" style="display:none">
             <li><a href="{{ route('products.index') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
                         class="item-name">Productos</span></a></li>
-            <li><a href="#"><i class="nav-icon i-Find-User text-base mr-2"></i><span
+            <li><a href="{{ route('references.index') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
                         class="item-name">Referencias</span></a></li>
         </ul>
         <!-- <ul class="mb-4 childNav" data-parent="widgets" style="display:none">

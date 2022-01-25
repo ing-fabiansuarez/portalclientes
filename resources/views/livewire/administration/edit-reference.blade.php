@@ -13,54 +13,49 @@
     </a>
     <x-jet-dialog-modal wire:model="open">
         <x-slot name="title" class="text-center">
-            Editar producto {{ $product->name_product }}
+            Editar referencia {{ $reference->name_ref }}
         </x-slot>
         <x-slot name="content">
             <div class="mb-4">
-                <x-jet-label value="Nombre del producto"></x-jet-label>
-                <x-jet-input wire:model="product.name_product" type="text" class="w-full" />
-                <x-jet-input-error for="product.name_product" />
+                <x-jet-label value="Tipo de producto"></x-jet-label>
+                <select wire:model="reference.product_id" class="w-full">
+                    @foreach ($products as $product)
+                        <option value="{{ $product->id }}" {{ $reference->product_id ? 'selected' : '' }}>
+                            {{ $product->name_product }}</option>
+                    @endforeach
+                </select>
+                <x-jet-input-error for="reference.product_id" />
+            </div>
+            <div class="mb-4">
+                <x-jet-label value="N° de referencia"></x-jet-label>
+                <x-jet-input wire:model="reference.num_ref" type="number" class="w-full" />
+                <x-jet-input-error for="reference.num_ref" />
+            </div>
+            <div class="mb-4">
+                <x-jet-label value="Nombre de la referencia"></x-jet-label>
+                <x-jet-input wire:model="reference.name_ref" type="text" class="w-full" />
+                <x-jet-input-error for="reference.name_ref" />
             </div>
             <div class="mb-4">
                 <x-jet-label value="Estado" class="mb-2"></x-jet-label>
                 <div class="cursor-pointer ml-2">
-                    @if ($product->active == 0)
+                    @if ($reference->active_ref == 0)
                         <label class="switch">
                             <input class="CheckBoxState" type="checkbox" data-onstyle="success" data-offstyle="danger"
                                 data-toggle="toggle" data-on="Active" data-off="InActive"
-                                data-product="{{ $product->id }}" wire:model="product.active">
-                            <span class="slider round ml-3">--Inactivo</span>
+                                wire:model="reference.active_ref">
+                            <span class="slider round ml-3">-Inactivo</span>
                         </label>
                     @else
                         <label class="switch">
                             <input class="CheckBoxState" type="checkbox" data-onstyle="success" data-offstyle="danger"
                                 data-toggle="toggle" data-on="Active" data-off="InActive"
-                                data-product="{{ $product->id }}" checked wire:model="product.active">
-                            <span class="slider round ml-3">--Activo</span>
+                                wire:model="reference.active_ref" checked>
+                            <span class="slider round ml-3">-Activo</span>
                         </label>
                     @endif
                 </div>
             </div>
-            <div class="mb-4">
-                <x-jet-label value="Puntuacion"></x-jet-label>
-                <x-jet-input wire:model="product.score" type="number" class="w-full" />
-                <x-jet-input-error for="product.score" />
-            </div>
-            <div class="mb-4">
-                <x-jet-label value="Categoria"></x-jet-label>
-                <select wire:model="product.category_id" class="w-full" id="select">
-                    @foreach ($categories as $category)
-                        @if ($product->category_id == $category->id)
-                            <option value="{{ $product->category_id }}" selected>
-                                {{ $category->name }}</option>
-                        @else
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endif
-                    @endforeach
-                </select>
-                <x-jet-input-error for="product.category_id" />
-            </div>
-
         </x-slot>
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$set('open',false)">

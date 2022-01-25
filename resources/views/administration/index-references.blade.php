@@ -4,5 +4,5 @@
 @endsection
 
 @section('content')
-    @livewire('administration.show-products')
+    @livewire('administration.show-references')
 @endsection
