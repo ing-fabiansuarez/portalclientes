@@ -7,30 +7,30 @@
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 
                             <div class="px-6 pt-4">
-                                <form class="w-full max-w-sm">
-                                    <div class="md:flex md:items-center">
-                                        <div class="md:w-1/3">
-                                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                for="inline-full-name">
-                                                Producto
-                                            </label>
-                                        </div>
-                                        <div class="md:w-2/3">
-                                            <x-select-input-products wire:model="idProduct" />
-                                        </div>
+
+                                <div class="md:flex md:items-center">
+                                    <div class="md:w-1/3">
+                                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                            for="inline-full-name">
+                                            Producto
+                                        </label>
                                     </div>
-                                    <div class="md:flex md:items-center">
-                                        <div class="md:w-1/3">
-                                            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                                                for="inline-full-name">
-                                                Referencia o Nombre
-                                            </label>
-                                        </div>
-                                        <div class="md:w-2/3">
-                                            <x-jet-input type="text" wire:model="ref" class="w-full" />
-                                        </div>
+                                    <div class="md:w-2/3">
+                                        <x-select-input-products wire:model="idProduct"
+                                            category="{{ $category->id }}" />
                                     </div>
-                                </form>
+                                </div>
+                                <div class="md:flex md:items-center">
+                                    <div class="md:w-1/3">
+                                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                            for="inline-full-name">
+                                            Referencia
+                                        </label>
+                                    </div>
+                                    <div class="md:w-2/3">
+                                        <x-jet-input type="text" wire:model="ref" class="w-full" />
+                                    </div>
+                                </div>
                             </div>
                             @if ($references->count())
                                 <table class="min-w-full divide-y divide-gray-200">
@@ -65,8 +65,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="#"
-                                                        class="text-indigo-600 hover:text-indigo-900">Agregar</a>
+                                                    @livewire('add-item-cart',['reference'=>$ref],key($ref->id))
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -115,6 +114,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>

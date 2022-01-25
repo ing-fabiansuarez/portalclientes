@@ -11,6 +11,6 @@
     </div>
     <!-- Start:: content (Your custom content)-->
 
-    @livewire('references.show-references-table')
+    @livewire('references.show-references-table',['category'=>$category])
 
 @endsection
