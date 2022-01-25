@@ -996,6 +996,9 @@ select {
 .col-span-12 {
   grid-column: span 12 / span 12;
 }
+.col-span-9 {
+  grid-column: span 9 / span 9;
+}
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -1110,11 +1113,14 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mr-0 {
-  margin-right: 0px;
-}
 .mb-3 {
   margin-bottom: 0.75rem;
+}
+.mr-10 {
+  margin-right: 2.5rem;
+}
+.mr-0 {
+  margin-right: 0px;
 }
 .mr-1 {
   margin-right: 0.25rem;
@@ -1125,14 +1131,14 @@ select {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .-mt-px {
   margin-top: -1px;
 }
 .mr-4 {
   margin-right: 1rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .mb-0 {
   margin-bottom: 0px;
@@ -1191,9 +1197,6 @@ select {
 .h-60 {
   height: 15rem;
 }
-.h-28 {
-  height: 7rem;
-}
 .h-screen {
   height: 100vh;
 }
@@ -1247,9 +1250,6 @@ select {
 }
 .w-20 {
   width: 5rem;
-}
-.w-52 {
-  width: 13rem;
 }
 .w-24 {
   width: 6rem;
@@ -1357,6 +1357,9 @@ select {
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.items-end {
+  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -1717,6 +1720,9 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pr-10 {
+  padding-right: 2.5rem;
+}
 .pr-6 {
   padding-right: 1.5rem;
 }
@@ -1725,9 +1731,6 @@ select {
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pr-10 {
-  padding-right: 2.5rem;
 }
 .pl-2 {
   padding-left: 0.5rem;
@@ -1801,11 +1804,11 @@ select {
 .font-semibold {
   font-weight: 600;
 }
-.font-normal {
-  font-weight: 400;
-}
 .font-bold {
   font-weight: 700;
+}
+.font-normal {
+  font-weight: 400;
 }
 .uppercase {
   text-transform: uppercase;
@@ -1895,10 +1898,6 @@ select {
   --tw-text-opacity: 1;
   color: rgb(147 51 234 / var(--tw-text-opacity));
 }
-.text-primary-500 {
-  --tw-text-opacity: 1;
-  color: rgb(210 144 244 / var(--tw-text-opacity));
-}
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1906,6 +1905,10 @@ select {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+.text-primary-500 {
+  --tw-text-opacity: 1;
+  color: rgb(210 144 244 / var(--tw-text-opacity));
 }
 .text-primary-600 {
   --tw-text-opacity: 1;
@@ -2063,6 +2066,12 @@ select {
 }
 .btn-icon {
     background: var(--primary-color-corporative);
+}
+table.basic-table tbody tr td {
+    padding: 0.5rem 0.5rem;
+}
+table.basic-table thead tr th {
+    padding: 0.5rem 0.5rem;
 }
 .hover\:border:hover {
   border-width: 1px;
@@ -2338,14 +2347,14 @@ select {
     margin-bottom: -1px;
   }
 
-  .sm\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .sm\:-mx-6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
+  }
+
+  .sm\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .sm\:mx-3 {
@@ -2542,6 +2551,14 @@ select {
 
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
+  }
+
+  .md\:col-span-12 {
+    grid-column: span 12 / span 12;
+  }
+
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3;
   }
 
   .md\:col-span-4 {

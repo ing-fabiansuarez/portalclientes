@@ -21,4 +21,24 @@ class Cart extends Model
         'user_id',
         'sold_out_cart',
     ];
+
+    public function reference()
+    {
+        return $this->belongsTo(Reference::class);
+    }
+
+    public function size()
+    {
+        return $this->belongsTo(Sizes::class);
+    }
+
+    public function horma()
+    {
+        return $this->belongsTo(Horma::class);
+    }
+
+    public function observation()
+    {
+        return $this->belongsTo(Observation::class);
+    }
 }

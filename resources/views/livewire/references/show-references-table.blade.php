@@ -85,34 +85,7 @@
             </div>
         </div>
         <div class="col-span-12 xl:col-span-8 md:col-span-8">
-            <div class="card mb-5">
-                <div class="card-body">
-                    <div class="flex flex-wrap justify-between items-center sm:flex-row"><img
-                            class="w-52 h-28 mr-0 mb-3 sm:mr-4 sm:mb-0" src="assets/images/products/iphone-1.jpg" />
-                        <div class="flex-1 text-center sm:text-left">
-                            <p class="text-lg mb-1 text-center sm:text-left">Portable Speaker with HD
-                                Sound</p>
-                            <div class="flex items-center mb-3 justify-center sm:justify-start">
-                                <p class="mr-1">category: </p><a
-                                    class="text-primary-500 hover:text-primary-500" href="#">Speaker
-                                </a>
-                            </div>
-                            <div class="mb-2"><a class="text-primary-500 mb-1">In Stock </a>
-                            </div>
-                            <div class="inline-flex mr-2 items-center my-4 sm:my-0">
-                                <button class="pr-4"><i class="i-Arrow-Left"></i></button>
-                                <p class="text-base">01</p>
-                                <button class="pl-4"><i class="i-Arrow-Right"></i></button>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-semibold text-2xl mb-3">$50</p>
-                            <button class="btn ripple btn-danger-outline mr-2" type="button"> <i
-                                    class="i-Close-Window mr-2 align-middle font-semibold"></i>Remove</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @livewire('cart.list-items-cart')
         </div>
 
     </div>
