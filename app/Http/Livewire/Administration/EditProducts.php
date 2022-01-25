@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Administration;
 
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 
@@ -13,7 +14,7 @@ class EditProducts extends Component
         'product.name_product' => 'required',
         'product.score' => 'required',
         'product.category_id' => 'required',
-        'product.active'=>'required'
+        'product.active' => 'required'
     ];
     public function mount(Product $product)
     {
@@ -22,7 +23,8 @@ class EditProducts extends Component
 
     public function render()
     {
-        return view('livewire.administration.edit-products');
+        $categories = Category::all();
+        return view('livewire.administration.edit-products', compact('categories'));
     }
     public function save()
     {

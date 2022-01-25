@@ -4,6 +4,7 @@
             input[type=checkbox] {
                 transform: scale(2);
             }
+
         </style>
     @endpush
 
@@ -48,11 +49,11 @@
             <div class="mb-4">
                 <x-jet-label value="Categoria"></x-jet-label>
                 <select wire:model="product.category_id">
-                    @php
-                        
-                    @endphp
-                    @foreach ( as )
-                        
+                    @foreach ($categories as $category)
+                        @if ($product->category_id == $category->id)
+                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                        @endif
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
                 <x-jet-input wire:model="product.category_id" type="text" class="w-full" />
