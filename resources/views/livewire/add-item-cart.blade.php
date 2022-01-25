@@ -17,25 +17,25 @@
 
                 <div class="flex-1 text-center sm:text-left">
                     @if (count($reference->hormas()) > 0)
-                        <div class="mb-4 px-3">
+                        <div class="my-4 px-3">
                             <x-jet-label class="text-base" value="Horma" />
                             <div class="mb-3 xl:w-96">
-                                <select
+                                <select wire:model.defer="inputHorma"
                                     class="form-select appearance-none
-                                block
-                                w-full
-                                px-2
-                                py-1
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding bg-no-repeat
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                        block
+                                        w-full
+                                        px-2
+                                        py-1
+                                        text-base
+                                        font-normal
+                                        text-gray-700
+                                        bg-white bg-clip-padding bg-no-repeat
+                                        border border-solid border-gray-300
+                                        rounded
+                                        transition
+                                        ease-in-out
+                                        m-0
+                                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                     aria-label="Default select example">
                                     <option value=""> -- Seleccione -- </option>
                                     @foreach ($reference->hormas() as $horma)
@@ -44,27 +44,28 @@
                                 </select>
                             </div>
                         </div>
+                        {{ $inputHorma }}
                     @endif
                     @if (count($reference->sizes()) > 0)
                         <div class="mb-4 px-3">
                             <x-jet-label class="text-base" value="Talla" />
                             <div class="mb-3 xl:w-96">
-                                <select
+                                <select wire:model.defer="inputSize"
                                     class="form-select form-select-sm appearance-none
-                                block
-                                w-full
-                                px-2
-                                py-1
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding bg-no-repeat
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                        block
+                                        w-full
+                                        px-2
+                                        py-1
+                                        text-base
+                                        font-normal
+                                        text-gray-700
+                                        bg-white bg-clip-padding bg-no-repeat
+                                        border border-solid border-gray-300
+                                        rounded
+                                        transition
+                                        ease-in-out
+                                        m-0
+                                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                     aria-label="Default select example">
                                     <option value=""> -- Seleccione -- </option>
                                     @foreach ($reference->sizes() as $size)
@@ -73,27 +74,28 @@
                                 </select>
                             </div>
                         </div>
+                        {{ $inputSize }}
                     @endif
                     @if (count($reference->observations()) > 0)
                         <div class="mb-4 px-3">
                             <x-jet-label class="text-base" value="Observación" />
                             <div class="mb-3 xl:w-96">
-                                <select
+                                <select wire:model.defer="inputObs"
                                     class="form-select form-select-sm appearance-none
-                                block
-                                w-full
-                                px-2
-                                py-1
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding bg-no-repeat
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                        block
+                                        w-full
+                                        px-2
+                                        py-1
+                                        text-base
+                                        font-normal
+                                        text-gray-700
+                                        bg-white bg-clip-padding bg-no-repeat
+                                        border border-solid border-gray-300
+                                        rounded
+                                        transition
+                                        ease-in-out
+                                        m-0
+                                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                     aria-label="Default select example">
                                     <option value="">Ninguna</option>
                                     @foreach ($reference->observations() as $obs)
@@ -102,26 +104,29 @@
                                 </select>
                             </div>
                         </div>
+                        {{ $inputObs }}
                     @endif
 
                     <div class="mb-4 px-3">
                         <x-jet-label value="Cantidad" />
                         <div class="inline-flex mr-2 items-center my-4 sm:my-0">
                             <button class="pr-4"><i class="i-Arrow-Left"></i></button>
-                            <x-jet-input class="w-8 text-center" value="1" />
+                            <x-jet-input wire:model.defer="inputQuantity" class="w-8 text-center"/>
                             <button class="pl-4"><i class="i-Arrow-Right"></i></button>
                         </div>
                     </div>
+                    {{ $inputQuantity }}
                 </div>
                 <div class="text-center">
-                    <p class="font-semibold text-2xl mb-3">$ {{ number_format($reference->product->price()['cost']) }}
+                    <p class="font-semibold text-2xl mb-3">$
+                        {{ number_format($reference->product->price()['cost']) }}
                     </p>
 
                 </div>
             </div>
         </x-slot>
         <x-slot name='footer'>
-            <button class="btn ripple btn-primary-outline mr-2" type="button">
+            <button wire:click="save" class="btn ripple btn-primary-outline mr-2" type="button">
                 <i class="fas fa-upload mr-2 align-middle font-semibold"></i>Agregar al carrito
             </button>
         </x-slot>
