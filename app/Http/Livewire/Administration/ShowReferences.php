@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 
 class ShowReferences extends Component
 {
+    use WithPagination;
     public $id_product = 1;
     public $search = '';
     public $sort = 'num_ref';
@@ -24,9 +25,19 @@ class ShowReferences extends Component
             ->where('num_ref', 'like', '%' . $this->search . '%')
             ->orderBy($this->sort, $this->direction)
             ->select('references.*', 'products.id as id_product', 'products.name_product as name_product')
-            ->get();
+            ->paginate(30);
         return view('livewire.administration.show-references', compact('products', 'references'));
     }
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
+    public function updatingIdProduct()
+    {
+        $this->resetPage();
+    }
+
     public function order($sort)
     {
         if ($this->sort == $sort) {

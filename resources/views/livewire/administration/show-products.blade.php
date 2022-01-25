@@ -80,6 +80,12 @@
                         </tr>
                     @endforeach
                 </tbody>
+                @if ($products->hasPages())
+                    <div class="px-6 py-4">
+                        {{ $products->links() }}
+                    </div>
+                @endif
+
             </table>
         @else
             <div class="px-6 py-4">

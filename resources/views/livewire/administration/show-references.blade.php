@@ -21,7 +21,7 @@
         </style>
     @endpush
     <div class="flex justify-center mb-4">
-         {{-- @livewire('administration.create-product') --}}
+        @livewire('administration.create-reference')
     </div>
     <div class="flex justify-center mb-4">
         <select wire:model="id_product"
@@ -88,6 +88,11 @@
                         </tr>
                     @endforeach
                 </tbody>
+                @if ($references->hasPages())
+                    <div class="px-6 py-4">
+                        {{ $references->links() }}
+                    </div>
+                @endif
             </table>
         @else
             <div class="px-6 py-4 text-center">
