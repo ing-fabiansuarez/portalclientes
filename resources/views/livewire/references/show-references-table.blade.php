@@ -64,7 +64,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                     @livewire('add-item-cart',['reference'=>$ref],key($ref->id))
                                                 </td>
                                             </tr>

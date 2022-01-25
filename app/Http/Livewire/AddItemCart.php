@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class AddItemCart extends Component
 {
+    public $open = false;
     public $reference;
 
     public function mount($reference)
