@@ -9,6 +9,7 @@ class ShowProducts extends Component
 {
     public $sort = 'id';
     public $direction = 'asc';
+    protected $listeners=['render'=>'render'];
     public function render()
     {
         $products = Product::orderBy($this->sort, $this->direction)->get();

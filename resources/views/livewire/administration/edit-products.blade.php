@@ -1,4 +1,12 @@
 <div>
+    @push('css')
+        <style>
+            input[type=checkbox] {
+                transform: scale(2);
+            }
+        </style>
+    @endpush
+
     <a wire:click="$set('open',true)" style="cursor: pointer;">
         <i class="fas fa-edit">Editar</i>
     </a>
@@ -13,8 +21,24 @@
                 <x-jet-input-error for="product.name_product" />
             </div>
             <div class="mb-4">
-                <x-jet-label value="Estado"></x-jet-label>
-                <x-jet-input wire:model="product.active" type="text" class="w-full" />
+                <x-jet-label value="Estado" class="mb-1"></x-jet-label>
+                <div class="cursor-pointer ml-2">
+                    @if ($product->active == 0)
+                        <label class="switch">
+                            <input id="permission" class="CheckBoxState" type="checkbox" data-onstyle="success"
+                                data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive"
+                                data-product="{{ $product->id }}" wire:model="product.active">
+                            <span class="slider round ml-2">Inactivo</span>
+                        </label>
+                    @else
+                        <label class="switch">
+                            <input id="permission" class="CheckBoxState" type="checkbox" data-onstyle="success"
+                                data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive"
+                                data-product="{{ $product->id }}" checked wire:model="product.active">
+                            <span class="slider round ml-2">Activo</span>
+                        </label>
+                    @endif
+                </div>
             </div>
             <div class="mb-4">
                 <x-jet-label value="Puntuacion"></x-jet-label>
@@ -23,6 +47,14 @@
             </div>
             <div class="mb-4">
                 <x-jet-label value="Categoria"></x-jet-label>
+                <select wire:model="product.category_id">
+                    @php
+                        
+                    @endphp
+                    @foreach ( as )
+                        
+                    @endforeach
+                </select>
                 <x-jet-input wire:model="product.category_id" type="text" class="w-full" />
                 <x-jet-input-error for="product.category_id" />
             </div>

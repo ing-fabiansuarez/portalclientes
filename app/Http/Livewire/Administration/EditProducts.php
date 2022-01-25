@@ -13,6 +13,7 @@ class EditProducts extends Component
         'product.name_product' => 'required',
         'product.score' => 'required',
         'product.category_id' => 'required',
+        'product.active'=>'required'
     ];
     public function mount(Product $product)
     {
@@ -25,9 +26,9 @@ class EditProducts extends Component
     }
     public function save()
     {
-        /* $this->validate();
-        $this->perm->save();
+        $this->validate();
+        $this->product->save();
         $this->reset(['open']);
-        $this->emitTo('show-permissions', 'render'); */
+        $this->emitTo('administration.show-products', 'render');
     }
 }
