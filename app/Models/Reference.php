@@ -30,4 +30,19 @@ class Reference extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function hormas()
+    {
+        return $this->product->hormas;
+    }
+
+    public function observations()
+    {
+        return $this->product->observations;
+    }
+
+    public function sizes()
+    {
+        return $this->product->sizes;
+    }
 }

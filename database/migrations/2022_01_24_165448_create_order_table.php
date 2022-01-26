@@ -15,11 +15,10 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id('id_order')->autoIncrement();
-            $table->date('date_order');
             $table->integer('products_total_price_order');
             $table->integer('shipping_price');
-            $table->string('state_order',40);
-            $table->string('consecutive_order',50);
+            $table->string('state_order', 40);
+            $table->bigInteger('consecutive_order');
             $table->unsignedBigInteger('shipping_info_id');
             $table->timestamps();
         });
