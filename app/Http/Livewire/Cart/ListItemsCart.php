@@ -9,6 +9,9 @@ use Livewire\Component;
 
 class ListItemsCart extends Component
 {
+    protected $listeners = [
+        'render' => 'render'
+    ];
     public function render()
     {
         $user = User::where('id', Auth::user()->id)->first();

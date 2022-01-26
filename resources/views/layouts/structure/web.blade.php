@@ -21,15 +21,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/fabian.css') }}" />
     @livewireStyles
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <!-- Estilos perzonalizados -->
-    <!-- <link rel="stylesheet" href="{{ asset('css/custom_styles.css') }}" /> -->
-    <!-- Fonts -->
+  
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
 
     @stack('css')
 </head>
@@ -60,17 +58,24 @@
     <script src="{{ asset('assets/js/pages/dashboard/dataSeries.script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
     <script src="{{ asset('assets/js/pages/dashboard/dashboard.v1.script.js') }}"></script>
-
-    {{-- Jquery Ivan Popper --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('modals')
 
     @livewireScripts
     @yield('scripts')
     @stack('js')
+
+    <script>
+        Livewire.on('alert', function(message) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: message,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        })
+    </script>
 </body>
 
 </html>

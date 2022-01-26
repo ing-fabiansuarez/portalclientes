@@ -44,7 +44,6 @@
                                 </select>
                             </div>
                         </div>
-                        {{ $inputHorma }}
                     @endif
                     @if (count($reference->sizes()) > 0)
                         <div class="mb-4 px-3">
@@ -74,7 +73,6 @@
                                 </select>
                             </div>
                         </div>
-                        {{ $inputSize }}
                     @endif
                     @if (count($reference->observations()) > 0)
                         <div class="mb-4 px-3">
@@ -104,18 +102,16 @@
                                 </select>
                             </div>
                         </div>
-                        {{ $inputObs }}
                     @endif
 
                     <div class="mb-4 px-3">
                         <x-jet-label value="Cantidad" />
                         <div class="inline-flex mr-2 items-center my-4 sm:my-0">
                             <button class="pr-4"><i class="i-Arrow-Left"></i></button>
-                            <x-jet-input wire:model.defer="inputQuantity" class="w-8 text-center"/>
+                            <x-jet-input wire:model.defer="inputQuantity" class="w-8 text-center" />
                             <button class="pl-4"><i class="i-Arrow-Right"></i></button>
                         </div>
                     </div>
-                    {{ $inputQuantity }}
                 </div>
                 <div class="text-center">
                     <p class="font-semibold text-2xl mb-3">$

@@ -62,7 +62,9 @@
                                                 {{ number_format($item->quantity_cart * $item->reference->product->price()['cost']) }}
                                             </td>
                                             <td>
-                                                <button class="btn btn-danger">Eliminar</button>
+                                                <button class="btn btn-danger">
+                                                    <i class="fas fa-trash-alt text-xl"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                     @endforeach

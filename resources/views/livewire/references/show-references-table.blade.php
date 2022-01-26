@@ -5,9 +5,7 @@
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-
                             <div class="px-6 pt-4">
-
                                 <div class="md:flex md:items-center">
                                     <div class="md:w-1/3">
                                         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
@@ -76,8 +74,6 @@
                                     No existe ning&uacute;n registro coincidente.
                                 </div>
                             @endif
-
-
                         </div>
                     </div>
                 </div>

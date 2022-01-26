@@ -18,7 +18,6 @@ class AddItemCart extends Component
         $this->reference = $reference;
     }
 
-
     public function render()
     {
         return view('livewire.add-item-cart');
@@ -35,5 +34,8 @@ class AddItemCart extends Component
             'user_id' => Auth::user()->id,
             'sold_out_cart' => false,
         ]);
+        $this->reset('open', 'inputHorma', 'inputSize', 'inputObs', 'inputQuantity');
+        $this->emit('render');
+        $this->emit('alert', 'Se agrego a la lista de pedido');
     }
 }
