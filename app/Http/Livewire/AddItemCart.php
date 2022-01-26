@@ -34,9 +34,9 @@ class AddItemCart extends Component
         switch ($this->reference->product->id) {
             case 1:
                 $this->rules = [
-                    'inputHorma' => 'required|exists:horma',
-                    'inputSize' => 'required|exists:sizes',
-                    'inputObs' => 'exists:observation',
+                    'inputHorma' => 'required|exists:horma,id',
+                    'inputSize' => 'required|exists:sizes,id',
+                    'inputObs' => 'exists:observation,id',
                     'inputQuantity' => 'required|integer',
                 ];
                 break;
