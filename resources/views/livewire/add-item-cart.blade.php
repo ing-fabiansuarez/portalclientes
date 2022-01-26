@@ -42,9 +42,15 @@
                                         <option value="{{ $horma['id'] }}">{{ $horma['name'] }}</option>
                                     @endforeach
                                 </select>
+                                @error('inputHorma')
+                                    <span>
+                                        {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                     @endif
+
                     @if (count($reference->sizes()) > 0)
                         <div class="mb-4 px-3">
                             <x-jet-label class="text-base" value="Talla" />
@@ -71,9 +77,15 @@
                                         <option value="{{ $size['id'] }}">{{ $size['name'] }}</option>
                                     @endforeach
                                 </select>
+                                @error('inputSize')
+                                    <span>
+                                        {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                     @endif
+
                     @if (count($reference->observations()) > 0)
                         <div class="mb-4 px-3">
                             <x-jet-label class="text-base" value="Observación" />
@@ -100,6 +112,11 @@
                                         <option value="{{ $obs['id'] }}">{{ $obs['name'] }}</option>
                                     @endforeach
                                 </select>
+                                @error('inputObs')
+                                    <span>
+                                        {{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                     @endif
@@ -111,6 +128,11 @@
                             <x-jet-input wire:model.defer="inputQuantity" class="w-8 text-center" />
                             <button class="pl-4"><i class="i-Arrow-Right"></i></button>
                         </div>
+                        @error('inputQuantity')
+                            <span>
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="text-center">

@@ -77,7 +77,7 @@ class User extends Authenticatable
     {
         $price = 0;
         $quantity_total = 0;
-        foreach ($items = Cart::where('user_id', $this->id)->where('sold_out_cart', false)->get() as $item) {
+        foreach ($items = Cart::where('user_id', $this->id)->where('sold_out_cart', false)->orderBy('id', 'desc')->get() as $item) {
             $price += ($item->quantity_cart * $item->reference->product->price()['cost']);
             $quantity_total += $item->quantity_cart;
         }

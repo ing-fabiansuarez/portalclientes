@@ -31,7 +31,7 @@
                                                 <div class="flex items-center">
                                                     <div>
                                                         <div class="text-sm leading-5 text-gray-800">
-                                                            {{ $loop->iteration }}</div>
+                                                            {{ count($cart) - $loop->iteration + 1 }}</div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -57,13 +57,13 @@
                                                     <b>Observaci&oacute;n:</b> {{ $item->observation->name }}
                                                 @endif
                                             </td>
-                                            <td class="text-xl">{{ $item->quantity_cart }}</td>
+                                            <td class="text-l">{{ $item->quantity_cart }}</td>
                                             <td>$
                                                 {{ number_format($item->quantity_cart * $item->reference->product->price()['cost']) }}
                                             </td>
                                             <td>
                                                 <button class="btn btn-danger">
-                                                    <i class="fas fa-trash-alt text-xl"></i>
+                                                    <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </td>
                                         </tr>

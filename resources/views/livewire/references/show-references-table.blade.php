@@ -14,7 +14,7 @@
                                         </label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <x-select-input-products wire:model="idProduct"
+                                        <x-select-input-products class="my-4" wire:model="idProduct"
                                             category="{{ $category->id }}" />
                                     </div>
                                 </div>

@@ -13,6 +13,10 @@ class AddItemCart extends Component
 
     public $inputHorma, $inputSize, $inputObs, $inputQuantity = 1;
 
+    protected $rules = [
+        'inputHorma' => 'required'
+    ];
+
     public function mount($reference)
     {
         $this->reference = $reference;
@@ -25,6 +29,7 @@ class AddItemCart extends Component
 
     public function save()
     {
+        $this->validate();
         Cart::create([
             'reference_id' => $this->reference->id,
             'size_id' => $this->inputSize,
