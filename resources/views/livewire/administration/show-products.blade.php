@@ -20,9 +20,18 @@
 
         </style>
     @endpush
-    <div class="flex justify-center mb-4">
-        {{-- @livewire('create-permission') --}}
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-12">
+                <div class="card" style="background-color: #D290F4">
+                    <div class="card-body flex justify-center items-center">
+                        @livewire('administration.create-product')
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <x-table>
         @if ($products->count())
             <table class="min-w-full">
@@ -58,7 +67,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-200">
                     @foreach ($products as $product)
-                        <tr>
+                        <tr class="text-center">
                             <td class="px-6 py-4">
                                 {{ $product->id }}
                             </td>
@@ -66,24 +75,34 @@
                                 {{ $product->name_product }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $product->active }}
+                                @if ($product->active)
+                                    <span class="badge-pill text-green-500 border border-black">
+                                        Activo</span>
+                                @else <span class="badge-pill text-red-500 border border-red-500">
+                                        Inactivo</span>
+                                @endif
                             </td>
                             <td class="px-6 py-4">
                                 {{ $product->score }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $product->category_id }}
+                                @php
+                                    $name = App\Models\Product::NameCategory($product->category_id);
+                                @endphp
+                                {{ $name }}
                             </td>
                             <td class="px-6 py-4 flex">
                                 @livewire('administration.edit-products',['product'=>$product],key($product->id))
-                                {{-- <a class="ml-4"
-                                    wire:click="$emit('deletePermission',{{ $permission->id }})">
-                                    <i class="fas fa-trash">Eliminar</i>
-                                </a> --}}
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
+                @if ($products->hasPages())
+                    <div class="px-6 py-4">
+                        {{ $products->links() }}
+                    </div>
+                @endif
+
             </table>
         @else
             <div class="px-6 py-4">
@@ -91,7 +110,4 @@
             </div>
         @endif
     </x-table>
-    @push('js')
-
-    @endpush
 </div>

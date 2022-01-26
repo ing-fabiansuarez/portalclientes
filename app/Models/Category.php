@@ -17,4 +17,8 @@ class Category extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
+    public function CategoryName($id_category)
+    {
+        return Category::select('name')->find($id_category);
+    }
 }

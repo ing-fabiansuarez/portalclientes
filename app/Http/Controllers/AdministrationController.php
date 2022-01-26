@@ -16,6 +16,6 @@ class AdministrationController extends Controller
     livewire creados para la edicion, eliminacion y creacion de los productos*/
     public function index_references()
     {
-        return view('administration.index-products');
+        return view('administration.index-references');
     }
 }

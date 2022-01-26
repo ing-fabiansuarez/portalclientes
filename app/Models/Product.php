@@ -11,7 +11,20 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'id',
+        'name_product',
+        'active',
+        'score',
+        'category_id'
+    ];
     public $incrementing = true;
+
+    public static function NameCategory($id_category)
+    {
+        $category = Category::select('name')->where('id', $id_category)->first();
+        return $category->name;
+    }
 
     //relaicon uno a uno polimorfinca
     public function image()
