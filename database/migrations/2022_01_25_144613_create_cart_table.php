@@ -22,10 +22,10 @@ class CreateCartTable extends Migration
             $table->unsignedBigInteger('size_id');
             $table->foreign('size_id')->references('id')->on('sizes');
             //horma
-            $table->unsignedBigInteger('horma_id');
+            $table->unsignedBigInteger('horma_id')->nullable();
             $table->foreign('horma_id')->references('id')->on('horma');
             //observation
-            $table->unsignedBigInteger('observation_id');
+            $table->unsignedBigInteger('observation_id')->nullable();
             $table->foreign('observation_id')->references('id')->on('observation');
             //quantity
             $table->integer('quantity_cart');

@@ -42,11 +42,7 @@
                                         <option value="{{ $horma['id'] }}">{{ $horma['name'] }}</option>
                                     @endforeach
                                 </select>
-                                @error('inputHorma')
-                                    <span>
-                                        {{ $message }}
-                                    </span>
-                                @enderror
+                                <x-jet-input-error for="inputHorma" />
                             </div>
                         </div>
                     @endif
@@ -77,11 +73,7 @@
                                         <option value="{{ $size['id'] }}">{{ $size['name'] }}</option>
                                     @endforeach
                                 </select>
-                                @error('inputSize')
-                                    <span>
-                                        {{ $message }}
-                                    </span>
-                                @enderror
+                                <x-jet-input-error for="inputSize" />
                             </div>
                         </div>
                     @endif
@@ -112,11 +104,7 @@
                                         <option value="{{ $obs['id'] }}">{{ $obs['name'] }}</option>
                                     @endforeach
                                 </select>
-                                @error('inputObs')
-                                    <span>
-                                        {{ $message }}
-                                    </span>
-                                @enderror
+                                <x-jet-input-error for="inputObs" />
                             </div>
                         </div>
                     @endif
@@ -128,18 +116,13 @@
                             <x-jet-input wire:model.defer="inputQuantity" class="w-8 text-center" />
                             <button class="pl-4"><i class="i-Arrow-Right"></i></button>
                         </div>
-                        @error('inputQuantity')
-                            <span>
-                                {{ $message }}
-                            </span>
-                        @enderror
+                        <x-jet-input-error for="inputQuantity" />
                     </div>
                 </div>
                 <div class="text-center">
                     <p class="font-semibold text-2xl mb-3">$
                         {{ number_format($reference->product->price()['cost']) }}
                     </p>
-
                 </div>
             </div>
         </x-slot>
