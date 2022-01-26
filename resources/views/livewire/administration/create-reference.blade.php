@@ -5,7 +5,7 @@
 
     <x-jet-dialog-modal wire:model="open">
         <x-slot name="title" class="text-center">
-            Crear nuevo referencia
+            Crear nueva referencia
         </x-slot>
         <x-slot name="content">
 
@@ -14,14 +14,11 @@
                 <strong class="font-bold">!Cargando la imagen¡</strong>
                 <span class="block sm:inline">Espere un momento...</span>
             </div>
-
             @if ($image)
                 <div class="mb-4">
                     <img src="{{ $image->temporaryUrl() }}">
                 </div>
             @endif
-
-
             <div class="mb-4">
                 <input type="file" wire:model="image" id="{{ $eraser }}">
                 <x-jet-input-error for="image" />

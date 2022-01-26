@@ -5,10 +5,15 @@
                 transform: scale(2);
             }
 
+            #Button {
+                cursor: pointer;
+            }
+
         </style>
     @endpush
 
-    <a wire:click="$set('open',true)" style="cursor: pointer;">
+    <a wire:click="$set('open',true)" id="Button"
+        class="inline-flex items-center px-1 py-2 bg-amber-100 border-1 border-red-300 rounded-3xl text-black hover:text-slate-900">
         <i class="fas fa-edit">Editar</i>
     </a>
     <x-jet-dialog-modal wire:model="open">

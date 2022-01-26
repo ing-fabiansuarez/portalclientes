@@ -19,6 +19,12 @@ class Product extends Model
     ];
     public $incrementing = true;
 
+    public static function NameCategory($id_category)
+    {
+        $category = Category::select('name')->where('id', $id_category)->first();
+        return $category->name;
+    }
+
     //relaicon uno a uno polimorfinca
     public function image()
     {

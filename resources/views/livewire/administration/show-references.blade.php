@@ -19,21 +19,74 @@
             }
 
         </style>
+        {{-- Tailwind no funciona --}}
+        {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     @endpush
-    <div class="flex justify-center mb-4">
-        @livewire('administration.create-reference')
+
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12 gap-5">
+            <div class="col-span-12 xl:col-span-4 lg:col-span-4 md:col-span-6">
+                <div class="card" style="background-color: #D290F4">
+                    <div class="card-body flex justify-center items-center">
+                        <div>
+                            <select wire:model="id_product"
+                                class="h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
+                                @foreach ($products as $product)
+                                    <option value="{{ $product->id }}">{{ $product->name_product }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 xl:col-span-4 lg:col-span-4 md:col-span-6">
+                <div class="card" style="background-color: #D290F4">
+                    <div class="card-body flex justify-center items-center">
+                        <div>
+                            <x-jet-input wire:model="search" type="number" placeholder="Busqueda por N° ref" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 xl:col-span-4 lg:col-span-4 md:col-span-12">
+                <div class="card" style="background-color: #D290F4">
+                    <div class="card-body flex justify-center items-center">
+                        @livewire('administration.create-reference')
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="flex justify-center mb-4">
-        <select wire:model="id_product"
-            class="h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
-            @foreach ($products as $product)
-                <option value="{{ $product->id }}">{{ $product->name_product }}</option>
-            @endforeach
-        </select>
+
+
+    {{-- <div class="flex justify-center min-w-m" style="background-color: rgb(239, 158, 255); border-radius: 20px;">
+        <div class="flex items-center justify-center ">
+            <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-2 min-w-xs">
+                @livewire('administration.create-reference')
+
+            </div>
+        </div>
     </div>
-    <div class="flex justify-center mb-4">
-        <x-jet-input wire:model="search" type="number" placeholder="Busqueda por N° referencia" style="width: 25rem" />
-    </div>
+    <div class="flex justify-center mb-4" style="background-color: rgb(239, 158, 255); border-radius: 20px;">
+        <div class="flex items-center justify-center bg-gradient-to-br from-primary-500 to-primary-800 w-full">
+            <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-2 min-w-xs">
+                <div class="flex justify-center items-center">
+                    <select wire:model="id_product"
+                        class="h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
+                        @foreach ($products as $product)
+                            <option value="{{ $product->id }}">{{ $product->name_product }}</option>
+                        @endforeach
+                    </select>
+                    <div class="ml-4">
+                        <x-jet-input wire:model="search" type="number" placeholder="Busqueda por N° ref"
+                            />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> --}}
+
     <x-table>
         @if ($references->count())
             <table class="min-w-full">
@@ -71,7 +124,7 @@
                                             Ref: {{ $reference->num_ref }}
                                         </div>
                                         <div class="text-sm text-gray-700">
-                                            {{ $reference->name_product }}
+                                            <span class="badge-pill">{{ $reference->name_product }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +133,12 @@
                                 {{ $reference->name_ref }}
                             </td>
                             <td class="px-3 py-2 text-center">
-                                {{ $reference->active_ref }}
+                                @if ($reference->active_ref)
+                                    <span class="badge-pill text-green-500 border border-black">
+                                        Activo</span>
+                                @else <span class="badge-pill text-red-500 border border-red-500">
+                                        Inactivo</span>
+                                @endif
                             </td>
                             <td class="px-3 py-2 flex">
                                 @livewire('administration.edit-reference',['id_reference'=>$reference->id],key($reference->id))

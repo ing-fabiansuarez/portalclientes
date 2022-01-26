@@ -41,10 +41,11 @@
                 </div>
 
             </div>
-            <div class="mb-4 w-1/2 flex justify-center text-center">
+            <div class="mb-4 flex justify-center text-center">
                 <div>
                     <x-jet-label value="Categoria"></x-jet-label>
-                    <select wire:model="category_id">
+                    <select wire:model="category_id"
+                        class="h-10 pl-4 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline">
                         <option value="">-- Seleccione una categoria</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -52,7 +53,6 @@
                     </select>
                     <x-jet-input-error for="category_id" />
                 </div>
-
             </div>
         </x-slot>
         <x-slot name="footer">
