@@ -1,5 +1,6 @@
 <div class="container mx-auto">
     <div class="grid grid-cols-12 gap-5 mb-5">
+
         <div class="col-span-12 xl:col-span-4 md:col-span-4">
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -14,8 +15,7 @@
                                         </label>
                                     </div>
                                     <div class="md:w-2/3">
-                                        <x-select-input-products class="my-4" wire:model="idProduct"
-                                            category="{{ $category->id }}" />
+                                        <x-select-input-products class="my-4" wire:model="idProduct"/>
                                     </div>
                                 </div>
                                 <div class="md:flex md:items-center">
@@ -63,7 +63,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                    @livewire('add-item-cart',['reference'=>$ref],key($ref->id))
+                                                    @livewire('cart.button-add-item-cart',['reference'=>$ref],key($ref->id))
                                                 </td>
                                             </tr>
                                         @endforeach

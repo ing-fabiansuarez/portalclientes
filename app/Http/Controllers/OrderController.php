@@ -8,23 +8,23 @@ use App\Models\Reference;
 
 class OrderController extends Controller
 {
-    public function list()
+    public function viewAddItemToListCart()
     {
-        return view('orders.create-order');
+        $references = Reference::where('active_ref', true)->paginate(10);
+        return view('cart.add-item-to-list-cart', [
+            'references' => $references,
+        ]);
+    }
+
+
+    public function showCategories()
+    {
+        return view('cart.show-categories');
     }
 
     public function viewReferncesByProduct(Product $product)
     {
         dd($product->references());
         return view('orders.show-references-by-product', compact('product'));
-    }
-
-    public function viewReferncesByCategory(Category $category)
-    {
-        $references = Reference::where('active_ref', true)->paginate(10);
-        return view('orders.show-references', [
-            'references' => $references,
-            'category' => $category
-        ]);
     }
 }
