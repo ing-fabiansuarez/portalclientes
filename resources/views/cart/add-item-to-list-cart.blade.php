@@ -10,7 +10,6 @@
         </div>
     </div>
     <!-- Start:: content (Your custom content)-->
-
-    @livewire('references.show-references-table',['category'=>$category])
+    @livewire('cart.show-references-table')
 
 @endsection

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Cart;
 
 use App\Models\Cart;
 use App\Models\Observation;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class AddItemCart extends Component
+class ButtonAddItemCart extends Component
 {
     public $open = false;
     public $reference;
@@ -23,7 +23,7 @@ class AddItemCart extends Component
 
     public function render()
     {
-        return view('livewire.add-item-cart');
+        return view('livewire.cart.button-add-item-cart');
     }
 
     public function save()

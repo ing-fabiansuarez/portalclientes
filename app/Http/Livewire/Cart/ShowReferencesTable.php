@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\References;
+namespace App\Http\Livewire\Cart;
 
 use App\Models\Category;
 use App\Models\Reference;
@@ -31,7 +31,7 @@ class ShowReferencesTable extends Component
                 ->orWhere('name_ref', 'like', '%' . $this->ref . '%')
                 ->paginate(10);
         }
-        return view('livewire.references.show-references-table', [
+        return view('livewire.cart.show-references-table', [
             'references' => $references,
             'category' => $this->category
         ]);

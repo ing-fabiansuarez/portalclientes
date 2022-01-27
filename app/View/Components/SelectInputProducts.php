@@ -7,16 +7,13 @@ use Illuminate\View\Component;
 
 class SelectInputProducts extends Component
 {
-
-    public $category;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($category = "")
+    public function __construct()
     {
-        $this->category = $category;
     }
 
     /**
@@ -26,7 +23,7 @@ class SelectInputProducts extends Component
      */
     public function render()
     {
-        $produts = Product::where('active', true)->where('category_id', $this->category)->orderBy('score', 'desc')->get();
+        $produts = Product::where('active', true)->orderBy('score', 'desc')->get();
         return view('components.select-input-products', compact('produts'));
     }
 }
