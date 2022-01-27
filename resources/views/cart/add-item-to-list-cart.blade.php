@@ -1,6 +1,6 @@
 @extends('layouts.structure.web')
 @section('title')
-    Agregar -
+    Lista de pedido -
 @endsection
 
 @section('content')

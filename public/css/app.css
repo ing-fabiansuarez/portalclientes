@@ -1119,17 +1119,17 @@ select {
 .mr-10 {
   margin-right: 2.5rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mr-0 {
   margin-right: 0px;
 }
-.mr-1 {
-  margin-right: 0.25rem;
-}
 .mr-4 {
   margin-right: 1rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
 }
 .mb-5 {
   margin-bottom: 1.25rem;
@@ -1295,6 +1295,12 @@ select {
 }
 .flex-grow {
   flex-grow: 1;
+}
+.basis-3\/4 {
+  flex-basis: 75%;
+}
+.basis-1\/4 {
+  flex-basis: 25%;
 }
 .origin-top-left {
   transform-origin: top left;
@@ -1522,21 +1528,13 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-.border-primary-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(210 144 244 / var(--tw-border-opacity));
-}
-.border-red-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(248 113 113 / var(--tw-border-opacity));
-}
 .border-red-300 {
   --tw-border-opacity: 1;
   border-color: rgb(252 165 165 / var(--tw-border-opacity));
+}
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 .border-black {
   --tw-border-opacity: 1;
@@ -1545,6 +1543,14 @@ select {
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+.border-primary-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(210 144 244 / var(--tw-border-opacity));
+}
+.border-red-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -1594,13 +1600,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
-.bg-primary-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(210 144 244 / var(--tw-bg-opacity));
-}
 .bg-amber-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 243 199 / var(--tw-bg-opacity));
+}
+.bg-primary-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 144 244 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1755,11 +1761,11 @@ select {
 .pr-10 {
   padding-right: 2.5rem;
 }
-.pr-6 {
-  padding-right: 1.5rem;
-}
 .pl-4 {
   padding-left: 1rem;
+}
+.pr-6 {
+  padding-right: 1.5rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1930,6 +1936,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(147 51 234 / var(--tw-text-opacity));
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1945,10 +1955,6 @@ select {
 .text-primary-600 {
   --tw-text-opacity: 1;
   color: rgb(210 144 244 / var(--tw-text-opacity));
-}
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-primary-200 {
   --tw-text-opacity: 1;
@@ -2112,6 +2118,9 @@ table.basic-table thead tr th {
 .btn {
     padding: 0.5rem 0.8rem;
 }
+.btn.btn-primary {
+    background: var(--primary-color-corporative);
+}
 .hover\:border:hover {
   border-width: 1px;
 }
@@ -2179,6 +2188,10 @@ table.basic-table thead tr th {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.hover\:text-slate-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
 .hover\:text-primary-500:hover {
   --tw-text-opacity: 1;
   color: rgb(210 144 244 / var(--tw-text-opacity));
@@ -2198,10 +2211,6 @@ table.basic-table thead tr th {
 .hover\:text-indigo-900:hover {
   --tw-text-opacity: 1;
   color: rgb(49 46 129 / var(--tw-text-opacity));
-}
-.hover\:text-slate-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 .focus\:z-10:focus {
   z-index: 10;
@@ -2600,10 +2609,6 @@ table.basic-table thead tr th {
     grid-column: span 1 / span 1;
   }
 
-  .md\:col-span-12 {
-    grid-column: span 12 / span 12;
-  }
-
   .md\:col-span-3 {
     grid-column: span 3 / span 3;
   }
@@ -2618,6 +2623,10 @@ table.basic-table thead tr th {
 
   .md\:col-span-6 {
     grid-column: span 6 / span 6;
+  }
+
+  .md\:col-span-12 {
+    grid-column: span 12 / span 12;
   }
 
   .md\:mt-0 {
@@ -2753,10 +2762,6 @@ table.basic-table thead tr th {
 
   .xl\:col-span-6 {
     grid-column: span 6 / span 6;
-  }
-
-  .xl\:col-span-1 {
-    grid-column: span 1 / span 1;
   }
 
   .xl\:mx-0 {

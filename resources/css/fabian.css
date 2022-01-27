@@ -39,3 +39,7 @@ table.basic-table thead tr th {
 .btn {
     padding: 0.5rem 0.8rem;
 }
+
+.btn.btn-primary {
+    background: var(--primary-color-corporative);
+}

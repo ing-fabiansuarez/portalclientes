@@ -1,13 +1,18 @@
 <div>
-
     <div class="card">
         <div class="card-body">
-
             <div class="grid grid-cols-12 gap-5 items-end">
-                <div class="col-span-12 xl:col-span-4 lg:col-span-4 md:col-span-12">
-                    <div class="font-bold text-lg">Detalle del pedido</div>
+                <div class="col-span-12">
+                    <div class="flex flex-row w-full">
+                        <div class="basis-3/4">
+                            <div class="font-bold text-lg">Detalle del pedido</div>
+                        </div>
+                        <div class="basis-1/4">
+                            <button class="btn ripple btn-primary mr-2  w-full" type="button">Hacer Pedido</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-span-12 mt-10">
+                <div class="col-span-12 mt-4">
                     <div class="overflow-x-auto pr-10 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                         <div class="align-middle inline-block min-w-full">
                             <table class="basic-table w-full">
@@ -18,9 +23,9 @@
                                         <th></th>
                                         <th>Referencia</th>
                                         <th>Talla</th>
-                                        <th>Especificaciones</th>
-                                        <th>Cantidad</th>
-                                        <th>Costo</th>
+                                        <th></th>
+                                        <th>Cant</th>
+                                        <th>Costo C/U</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -43,23 +48,25 @@
                                                     src="{{ Storage::url(@$item->reference->image->url) }}" />
                                             </td>
                                             <td>
-                                                {{ $item->reference->num_ref . ' - ' . $item->reference->name_ref }}
+                                                <b>Ref:</b> {{ $item->reference->num_ref }} <br>
+                                                {{ $item->reference->name_ref }}
                                             </td>
                                             <td>
                                                 {{ $item->size->name }}
                                             </td>
                                             <td>
                                                 @if ($item->horma_id != null)
-                                                    <b>Horma:</b> {{ $item->horma->name }}
+                                                    <b>Horma:</b><br> {{ $item->horma->name }}
                                                     <br>
                                                 @endif
                                                 @if ($item->observation != null)
-                                                    <b>Observaci&oacute;n:</b> {{ $item->observation->name }}
+                                                    <b>Observaci&oacute;n:</b><br> {{ $item->observation->name }}
                                                 @endif
                                             </td>
-                                            <td class="text-l">{{ $item->quantity_cart }}</td>
+                                            <td class="text-l">{{ $item->quantity_cart }} X</td>
                                             <td>$
-                                                {{ number_format($item->quantity_cart * $item->reference->product->price()['cost']) }}
+                                                {{ number_format($item->reference->product->price()['cost']) }}
+                                                {{-- {{ number_format($item->quantity_cart * $item->reference->product->price()['cost']) }} --}}
                                             </td>
                                             <td>
                                                 <button wire:click="$emit('deleteItemCart',{{ $item->id }})"
@@ -74,13 +81,12 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-span-9"></div>
                 <div class="col-span-12 md:col-span-3">
                     <div class="mt-5">
                         <div class="flex justify-between mb-3">
                             <p class="mr-10">Cantidad: </p>
-                            <p class="text-xl">{{ $quantity_total }}</p>
+                            <p class="text-xl">{{ $quantity_total }} prod.</p>
                         </div>
                         {{-- <div class="flex justify-between mb-3">
                             <p class="mr-10">Vat(%):</p>

@@ -10,21 +10,10 @@ class OrderController extends Controller
 {
     public function viewAddItemToListCart()
     {
-        $references = Reference::where('active_ref', true)->paginate(10);
-        return view('cart.add-item-to-list-cart', [
-            'references' => $references,
-        ]);
+        return view('cart.add-item-to-list-cart');
     }
 
-
-    public function showCategories()
+    public function viewShippingInformation()
     {
-        return view('cart.show-categories');
-    }
-
-    public function viewReferncesByProduct(Product $product)
-    {
-        dd($product->references());
-        return view('orders.show-references-by-product', compact('product'));
     }
 }
