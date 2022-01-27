@@ -10,7 +10,8 @@ use Livewire\Component;
 class ListItemsCart extends Component
 {
     protected $listeners = [
-        'render' => 'render'
+        'render',
+        'delete'
     ];
     public function render()
     {
@@ -21,5 +22,10 @@ class ListItemsCart extends Component
             'total' => $cart['price_products'],
             'quantity_total' => $cart['quantity_total']
         ]);
+    }
+
+    public function delete(Cart $cart)
+    {
+        $cart->delete();
     }
 }

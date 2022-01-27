@@ -62,7 +62,8 @@
                                                 {{ number_format($item->quantity_cart * $item->reference->product->price()['cost']) }}
                                             </td>
                                             <td>
-                                                <button class="btn btn-danger">
+                                                <button wire:click="$emit('deleteItemCart',{{ $item->id }})"
+                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </td>
@@ -94,5 +95,30 @@
             </div>
         </div>
     </div>
+    @push('js')
+        <script>
+            Livewire.on('deleteItemCart', cartId => {
+                Swal.fire({
+                    title: 'Estas Seguro?',
+                    text: "Vas a eliminar el item de la lista!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, eliminar!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.emitTo('cart.list-items-cart', 'delete', cartId)
+                        Swal.fire(
+                            'Eliminadó!',
+                            'El item fué eliminado.',
+                            'success'
+                        )
+                    }
+                })
+            })
+        </script>
+    @endpush
+
 
 </div>
