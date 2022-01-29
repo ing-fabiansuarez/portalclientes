@@ -43,3 +43,12 @@ table.basic-table thead tr th {
 .btn.btn-primary {
     background: var(--primary-color-corporative);
 }
+
+.bg-primary-pera {
+    background: var(--primary-color-corporative);
+}
+
+.border-primary-pera {
+    border-color: var(--primary-color-corporative);
+    border-radius: 10px;
+}

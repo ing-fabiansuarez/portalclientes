@@ -1655,11 +1655,11 @@ select {
 .p-5 {
   padding: 1.25rem;
 }
-.p-1 {
-  padding: 0.25rem;
-}
 .p-4 {
   padding: 1rem;
+}
+.p-1 {
+  padding: 0.25rem;
 }
 .p-3 {
   padding: 0.75rem;
@@ -2121,6 +2121,13 @@ table.basic-table thead tr th {
 .btn.btn-primary {
     background: var(--primary-color-corporative);
 }
+.bg-primary-pera {
+    background: var(--primary-color-corporative);
+}
+.border-primary-pera {
+    border-color: var(--primary-color-corporative);
+    border-radius: 10px;
+}
 .hover\:border:hover {
   border-width: 1px;
 }
@@ -2207,10 +2214,6 @@ table.basic-table thead tr th {
 .hover\:text-primary-400:hover {
   --tw-text-opacity: 1;
   color: rgb(210 144 244 / var(--tw-text-opacity));
-}
-.hover\:text-indigo-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 .focus\:z-10:focus {
   z-index: 10;

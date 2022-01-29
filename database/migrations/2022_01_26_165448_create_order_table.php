@@ -15,8 +15,7 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id('id_order')->autoIncrement();
-            $table->integer('products_total_price_order');
-            $table->integer('shipping_price');
+            $table->integer('total_price_order');
             $table->string('state_order', 40);
             $table->bigInteger('consecutive_order');
             $table->unsignedBigInteger('shipping_info_id');

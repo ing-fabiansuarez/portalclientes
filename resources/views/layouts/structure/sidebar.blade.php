@@ -5,7 +5,7 @@
                         class="i-Bar-Chart text-3xl"></i>
                     <p>Inicio</p>
                 </a></li>
-            <li class="nav-item"><a class="nav-item-hold" href="{{ route('create_order') }}"><i
+            <li class="nav-item"><a class="nav-item-hold" href="{{ route('order.viewadditemtolistcart') }}"><i
                         class="i-Computer-Secure text-3xl"></i>
                     <p>Crear Pedido</p>
                 </a></li>
@@ -78,7 +78,7 @@
                         class="item-name">Version Five </span></a></li>
         </ul>
         <ul class="mb-4 childNav" data-parent="apps" style="display:none">
-            <li><a class="flex" href="{{ route('create_order') }}"><i
+            <li><a class="flex" href="{{ route('order.viewadditemtolistcart') }}"><i
                         class="nav-icon i-Add-Cart text-base mr-2"></i><span class="item-name">Crear
                         Pedido</span></a></li>
             <li><a class="flex" href="#"><i class="nav-icon i-Add-Cart text-base mr-2"></i><span

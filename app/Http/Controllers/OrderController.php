@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Reference;
+use PhpParser\Node\Stmt\Echo_;
 
 class OrderController extends Controller
 {
@@ -15,5 +16,7 @@ class OrderController extends Controller
 
     public function viewShippingInformation()
     {
+        //redireccionar a la lista si esta vacia la misma.
+        return view('orders.shopping-information');
     }
 }

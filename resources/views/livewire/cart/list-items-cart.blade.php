@@ -8,7 +8,7 @@
                             <div class="font-bold text-lg">Detalle del pedido</div>
                         </div>
                         <div class="basis-1/4">
-                            <button class="btn ripple btn-primary mr-2  w-full" type="button">Hacer Pedido</button>
+                            <a href="{{route('order.viewshipinginformation')}}" class="btn ripple btn-primary mr-2  w-full" type="button">Hacer Pedido</a>
                         </div>
                     </div>
                 </div>
