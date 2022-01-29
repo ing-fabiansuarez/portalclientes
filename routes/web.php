@@ -36,6 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::group(['prefix' => 'pedidos'], function () {
         Route::get('lista-de-pedido', [OrderController::class, 'viewAddItemToListCart'])->name('order.viewadditemtolistcart');
         Route::get('datos-de-envio', [OrderController::class, 'viewShippingInformation'])->name('order.viewshipinginformation');
+        Route::get('checkout', [OrderController::class, 'createOrder'])->name('order.createOrder');
     });
 
     //USUARIOS

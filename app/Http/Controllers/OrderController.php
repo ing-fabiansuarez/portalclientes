@@ -19,4 +19,9 @@ class OrderController extends Controller
         //redireccionar a la lista si esta vacia la misma.
         return view('orders.shopping-information');
     }
+
+    public function createOrder()
+    {
+        return view('orders.checkout-order');
+    }
 }

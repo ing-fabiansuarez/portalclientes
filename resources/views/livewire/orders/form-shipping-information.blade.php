@@ -40,6 +40,7 @@
         </div>
     </div>
     <div class="col-span-12 md:col-span-12 text-center">
-        <button class="mr-2 btn btn-primary raised text-xl" type="button"><b>Generar Pedido</b></button>
+        <a href="{{ route('order.createOrder') }}" class="mr-2 btn btn-primary raised text-xl" type="button"><b>Generar
+                Pedido</b></a>
     </div>
 </div>

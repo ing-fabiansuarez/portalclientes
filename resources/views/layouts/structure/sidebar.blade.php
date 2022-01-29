@@ -77,13 +77,13 @@
             <li><a href="dashboards/dashboard.Analytic-2.html"><i class="nav-icon i-Clock text-base mr-2"></i><span
                         class="item-name">Version Five </span></a></li>
         </ul>
-        <ul class="mb-4 childNav" data-parent="apps" style="display:none">
+       {{--  <ul class="mb-4 childNav" data-parent="apps" style="display:none">
             <li><a class="flex" href="{{ route('order.viewadditemtolistcart') }}"><i
                         class="nav-icon i-Add-Cart text-base mr-2"></i><span class="item-name">Crear
                         Pedido</span></a></li>
             <li><a class="flex" href="#"><i class="nav-icon i-Add-Cart text-base mr-2"></i><span
                         class="item-name">Mis Pedidos</span></a></li>
-        </ul>
+        </ul> --}}
         <ul class="mb-4 childNav" data-parent="profile" style="display:none">
             <li><a href="{{ route('create_user') }}"><i class="nav-icon i-Find-User text-base mr-2"></i><span
                         class="item-name">Registrar nuevo usuario</span></a></li>
